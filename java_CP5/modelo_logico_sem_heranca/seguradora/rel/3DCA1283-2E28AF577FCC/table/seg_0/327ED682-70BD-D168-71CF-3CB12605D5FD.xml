@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="327ED682-70BD-D168-71CF-3CB12605D5FD" name="VEICULOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>38150AD1-1549-D5D4-EE13-D5C5174F898C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_veiculo" id="30C907A2-D6A8-1B98-2546-69A682DADDF7">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>249C6A81-805D-5D49-D8D3-6EBE59606E59</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="738B05D4-CB7C-6F6D-9E16-AE36C169BE21">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>E1EE0ED4-9C3B-8F69-7DF9-F671412284AC</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="modelo" id="C9B20CD4-0016-A3C7-515D-781E116B8D59">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>DC200C88-422D-77CC-8AEE-E9DA85BA8F3B</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fabricante" id="A3F1AB16-22BC-4EB7-0385-140D634AEB3C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>B2543AF8-AE5B-0104-0675-DA23B4D5580C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ano_fabricacao" id="344585D8-C456-9930-920E-9E3170A189F5">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>B16B3026-FB32-4FA9-67DF-E43E8258197A</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="placa" id="2BEE45F0-FA36-8052-286C-F2A880C2424C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>E7B43150-FA22-F677-8F61-9E95880BDF4D</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE8C33F7-CE0D-3B07-97DC-CAFA5097CD00" name="VEICULOS_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>AD877044-D095-EB75-8D68-2FD0A63774A9</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="30C907A2-D6A8-1B98-2546-69A682DADDF7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

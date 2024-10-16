@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="17834ED7-14A6-4AFA-6402-50FB30401D1A" name="ENDERECOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>FA57DC5C-086C-A2CB-B1AF-1381C4D3B030</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_endereco" id="E76979B1-AEA4-C3CE-5035-DA4ADAEE47C2">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>7D9B9205-4B7D-C3FF-B1AD-F0B0EE1BAAD6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero" id="7663085B-1C18-57D1-1C89-9FE72E337E4E">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>D09A068A-1D84-ED46-6E84-3642F71A8428</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="logradouro" id="40357B1E-B055-8BAC-ECE8-E1490703599C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>EDC197AE-85E0-DDBF-E1C9-E7F52B9A3203</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="bairro" id="281ED91D-06DA-016B-9709-AEF77B51F796">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>0BCF82B9-E5D6-C6B4-7585-250D3559A77C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cidade" id="76E9D32F-5158-BD54-0F3B-13381C0B9E90">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>51E6CD19-0B24-0727-5CB8-34E9FBAB9800</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="estado" id="3171A215-B646-B3D7-470B-AA1F171E3424">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>FB68EB33-25BE-4ACC-B2FF-AE92AB6A181B</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DCBE76C0-E255-547A-2D80-CEF3A64ED811" name="ENDERECOS_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>C55AB069-C483-6C4C-C57D-531DF30C803A</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E76979B1-AEA4-C3CE-5035-DA4ADAEE47C2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

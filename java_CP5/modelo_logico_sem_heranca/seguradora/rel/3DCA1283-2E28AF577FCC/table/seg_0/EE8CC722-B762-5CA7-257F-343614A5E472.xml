@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EE8CC722-B762-5CA7-257F-343614A5E472" name="RENOVACOES">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>1B13DB1A-A4C9-48B8-4059-562A22845935</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_renovacoes" id="D5B7EB49-1431-2990-A1FD-2F6E97702B35">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>5A503902-3B2D-A20A-6D84-8A3814680ABD</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="renovacao" id="81F66FFD-727E-94BF-4BAA-ED903E2671CF">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>BA443666-AAEA-2CB7-0467-9FC272EB9B8F</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_inicio" id="E36032B7-CC38-B987-0E74-583EAB862930">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>F1D08442-E47E-016C-FFBF-730BD61603F1</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_final" id="1B6D351C-0F24-3E2E-1624-E9EAFDBA9C3A">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>6A33CD7D-7046-BA0E-6FF1-C412A3F869E9</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="desconto" id="AA2736BB-7E3A-8FD9-E6A5-90517D13AFC2">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>09380ACD-7DB8-6012-73BA-61535E58A460</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="68AC8D77-3C35-1FC1-1480-C620B55B7020" name="RENOVACOES_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>774A7AC0-A99A-8423-D175-3481C031D0FA</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D5B7EB49-1431-2990-A1FD-2F6E97702B35"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

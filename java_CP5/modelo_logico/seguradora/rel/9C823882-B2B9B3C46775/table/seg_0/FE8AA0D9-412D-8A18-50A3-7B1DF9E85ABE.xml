@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE8AA0D9-412D-8A18-50A3-7B1DF9E85ABE" name="CONSTATOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>97B76924-6B26-5993-DEE5-C909D5C44EA0</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_contato" id="4E82DD44-2628-A5D7-C00B-EFF4BFD73DB0">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>AF07288F-A023-8F91-A5BD-01E9FA5558BC</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefone" id="B84B4FE4-1223-804E-8981-5F86F75F8397">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>715D0457-709A-6AE1-3E2C-C101D4D58C9C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="7EF116E0-1F82-A017-3A5A-7700EAB317B5">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>51B3D653-61B9-2017-F4E9-1FE2ED04015B</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contato" id="7EE8531C-E2C8-E0D9-531A-A7B6BC8920A1">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>41FAD8E5-6097-C76E-CA31-174B3494D6D2</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="231A9E73-3FE2-1FA2-04B8-3AD8974A1A25" name="CONSTATOS_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>C1BBA85C-5772-FC65-A877-1D1F4E0F18D9</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4E82DD44-2628-A5D7-C00B-EFF4BFD73DB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

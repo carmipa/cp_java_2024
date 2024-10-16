@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AD94A9AD-A813-544B-0B75-498B9419B406" name="VEICULOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>38150AD1-1549-D5D4-EE13-D5C5174F898C</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_veiculo" id="29704CE9-BBAA-29D6-6F6C-24F81E269AF9">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>249C6A81-805D-5D49-D8D3-6EBE59606E59</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="189DD6AD-C2D8-B24E-BB9A-468E8933A9ED">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>E1EE0ED4-9C3B-8F69-7DF9-F671412284AC</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="modelo" id="826A4DA1-D019-B1C5-EA38-CE04B7CA7039">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>DC200C88-422D-77CC-8AEE-E9DA85BA8F3B</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fabricante" id="D9D38CD3-F695-8B9C-5BF1-5F8BD8D584BA">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>B2543AF8-AE5B-0104-0675-DA23B4D5580C</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ano_fabricacao" id="0E8A68B1-E963-5FDD-21C1-A7E6D2F63964">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>B16B3026-FB32-4FA9-67DF-E43E8258197A</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="placa" id="3DE7B9BB-7FD7-7EF8-CFE9-355EB809EE99">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>E7B43150-FA22-F677-8F61-9E95880BDF4D</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9BC01950-0A97-C4E0-BEC0-80E3B235E9F4" name="VEICULOS_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>AD877044-D095-EB75-8D68-2FD0A63774A9</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="29704CE9-BBAA-29D6-6F6C-24F81E269AF9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

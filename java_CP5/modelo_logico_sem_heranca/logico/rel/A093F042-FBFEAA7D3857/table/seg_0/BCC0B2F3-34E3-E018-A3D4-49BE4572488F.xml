@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BCC0B2F3-34E3-E018-A3D4-49BE4572488F" name="PO">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>123D4355-1DB7-B945-2D0A-5E5784796AB5</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_po" id="010FBDF2-CB4C-E42E-27A9-F65B816B9DED">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>F784FE42-298E-99C4-EB7B-C65100AFD660</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORCAMENTOS_id_orcamento" id="80ACF7F6-D78B-6DCF-B117-C849A28934E7">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>86D3A14A-7AAD-AAD3-A037-BB9725E7E495</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="800EA18E-A665-91B6-C345-971AF19A9C6A" referredColumn="A192A823-BEBA-4524-47B2-CC896B985AFD"/>
+</associations>
+</Column>
+<Column name="PAGAMENTOS_id_pagamento" id="E8195060-ACE8-A8D2-B5A4-2714848B9B88">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>37E9013C-CB3F-E6C1-2BA6-9F0813134A78</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="090F772D-2F26-9624-1446-197812E5E15B" referredColumn="E8022516-AFCA-2FB2-3FE1-4F8C0B492485"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C1CF2302-C557-C624-C73C-5993B1DF5F8D" name="PO_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>E7D02ABA-508F-818E-13B6-2EDEB29FF885</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="010FBDF2-CB4C-E42E-27A9-F65B816B9DED"/>
+<colUsage columnID="80ACF7F6-D78B-6DCF-B117-C849A28934E7"/>
+<colUsage columnID="E8195060-ACE8-A8D2-B5A4-2714848B9B88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="37B2BD0F-2E7C-1F8A-80C1-8B4D34363CEF" name="PO_ORCAMENTOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>BED42189-8BB1-774E-26DC-3ADF5A9B1394</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80ACF7F6-D78B-6DCF-B117-C849A28934E7"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B6F0244-326C-6D94-C039-9DBE132F2DA9" name="PO_PAGAMENTOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>2FA5C68E-8A08-E4BA-2822-82DD9A606A09</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E8195060-ACE8-A8D2-B5A4-2714848B9B88"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

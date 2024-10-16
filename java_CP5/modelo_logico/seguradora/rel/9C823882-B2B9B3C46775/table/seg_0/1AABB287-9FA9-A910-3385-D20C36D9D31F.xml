@@ -1,0 +1,206 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1AABB287-9FA9-A910-3385-D20C36D9D31F" name="CLIENTES">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>AE09A96D-67CB-5E6F-83D9-FF4BBBE59BF2</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_cliente" id="0EF6A3B4-55A2-EFC2-DE2E-8C91BD3E2704">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>91ABA345-32CF-1926-E6DA-EB332FAF435E</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_cliente" id="C8E71CAF-4CFB-F858-387C-4C5C5F457D5B">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>D5DBA638-E67E-E5F6-D515-0B73DA1E8DC6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="C94D30FF-7D65-9444-F616-15DDCBB512E8">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>10FB197C-66A0-8A3A-97F5-3900DC20FBDF</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_documento" id="3E6C4E32-9C00-9A2E-DC44-8A2738290380">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>43449FFA-9F18-9C8D-6B33-8C11E65B0A55</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_documento" id="2CE25071-BAAF-9C32-25DE-D8B1BB0D3CCE">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>FAE4E869-8166-8A7D-7F23-48ED92AB14BE</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_nascimento" id="184B8FF2-4898-4AD7-AD1A-C1D086C67B3F">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>6856B9FD-C204-0045-85C9-AE35BCE81D3E</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENDERECOS_id_endereco" id="81137EDF-430D-20E3-A5A6-10DEF7E1CA2D">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>A41F599F-4C2C-D46B-55BC-C621F6CAE761</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7753C273-48CF-BC3E-F9F2-2F7C7B0A3A24" referredColumn="E76979B1-AEA4-C3CE-5035-DA4ADAEE47C2"/>
+</associations>
+</Column>
+<Column name="CONSTATOS_id_contato" id="EFAF07A1-C0F2-895A-F09D-8559229A1BD3">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>E88FC041-078C-0EF9-C3AF-7A2F80CB93B1</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3ED145C3-BE7E-597C-6DED-D88755EEE237" referredColumn="4E82DD44-2628-A5D7-C00B-EFF4BFD73DB0"/>
+</associations>
+</Column>
+<Column name="S_C_id_sc" id="A0BC065C-6A92-C534-104E-C5F81FC1512F">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>3F0E9878-A2A0-4E6C-0EC5-40B44E80BC30</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9DB23D5-964F-5915-0717-1A422575200A" referredColumn="B544F615-9E59-54F8-C4FA-C93605CFC54C"/>
+</associations>
+</Column>
+<Column name="C_P_id_cp" id="302E81BC-3BF1-D0DF-4AB7-435A50B0A224">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>8A0707B0-6148-74C1-240C-E5B5A0277299</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74387DCC-AE3B-5D76-D8D1-9EB00A19D173" referredColumn="0C8299DB-E7D2-D293-EC4B-42A17E64CA2E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EA0788CA-65DB-0076-8BE1-31F638CC47DB" name="CLIENTES_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>C7C46E14-1853-43B1-9EE5-7D0B7F8709EC</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0EF6A3B4-55A2-EFC2-DE2E-8C91BD3E2704"/>
+<colUsage columnID="A0BC065C-6A92-C534-104E-C5F81FC1512F"/>
+<colUsage columnID="302E81BC-3BF1-D0DF-4AB7-435A50B0A224"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="AE362D29-DB59-60C3-ABB1-450CD79E821C" name="CLIENTES_CONSTATOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>1D224036-F16B-5FF6-40C1-A7102E4BBE76</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EFAF07A1-C0F2-895A-F09D-8559229A1BD3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9A3A0B86-9BD6-2855-FFD7-208B27681F47" name="CLIENTES_ENDERECOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>AE31BDB0-937C-7D43-B0CE-1F150B11E61D</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81137EDF-430D-20E3-A5A6-10DEF7E1CA2D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3A7E2E5D-2F4E-E00A-F07C-E27AD8D7857C" name="CLIENTES_S_C_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>34200C23-A5E1-96DE-EDD5-0741F7049927</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0BC065C-6A92-C534-104E-C5F81FC1512F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E0BAFC57-B60E-1C88-9AAC-7F7A37333C43" name="CLIENTES_C_P_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>77D76904-4B9C-A754-92EA-28AB9FABD4F4</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="302E81BC-3BF1-D0DF-4AB7-435A50B0A224"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

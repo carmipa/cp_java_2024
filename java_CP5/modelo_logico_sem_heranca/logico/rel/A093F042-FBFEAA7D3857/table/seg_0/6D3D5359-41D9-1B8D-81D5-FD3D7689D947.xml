@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6D3D5359-41D9-1B8D-81D5-FD3D7689D947" name="CO">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>F2B75C49-D6A7-8858-2A03-7D1040DF77AE</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_co" id="ADA4F420-CFB0-5EE7-8E91-18C42BD977F3">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>0B7250A6-9821-6353-123D-699D77ECF974</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ORCAMENTOS_id_orcamento" id="EC19662C-A035-129D-9D75-B7E7E05E8154">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>8FF9BBC6-8A7A-D6B5-02A7-C5EB81A9C248</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6D33046F-8C86-7697-69A8-7D7FDA32B2C1" referredColumn="A192A823-BEBA-4524-47B2-CC896B985AFD"/>
+</associations>
+</Column>
+<Column name="CLIENTES_id_cliente" id="C438D529-D2D0-0F7C-86A0-E29BE42075AF">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>0789FE03-EA1D-8263-B8D2-E12401B67632</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4F96EEE-D33C-88C2-9BD6-D61DBD37EA14" referredColumn="E478852E-7CFE-AFBC-CEE2-078A6D0F5D3A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0CD5824C-2810-15AF-3769-609C95363027" name="CO_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>4159686F-653A-9B4B-0AE6-BE417043FB0C</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ADA4F420-CFB0-5EE7-8E91-18C42BD977F3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5882A740-A277-DB61-44D1-C32466561FB9" name="CO_CLIENTES_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>E45AEF6F-2BC8-B38E-D503-8650D363FD05</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C438D529-D2D0-0F7C-86A0-E29BE42075AF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="43ADF31C-681E-3D9B-E9B1-9FF33C4B315C" name="CO_ORCAMENTOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>80AD27CD-7157-E246-76D9-04A4A32BE470</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EC19662C-A035-129D-9D75-B7E7E05E8154"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

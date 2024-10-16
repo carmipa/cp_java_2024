@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FEE0D362-393B-7E19-3C13-08519EA7E1B9" name="VR">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:43:26 UTC</createdTime>
+<ownerDesignName>logico</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_vr" id="D9A21BAB-B9EF-681D-2230-B4DD1786F7CE">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:43:36 UTC</createdTime>
+<ownerDesignName>logico</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_veiculo" id="AF3A20BC-EA6A-9FDE-3875-724A9265B2EC">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:44:06 UTC</createdTime>
+<generatorID>A735F404-8EE2-BE14-9C5B-C79CB378E88D</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<referedAttribute>249C6A81-805D-5D49-D8D3-6EBE59606E59</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_renovacoes" id="9EFA5665-FD38-76CE-702B-4C5BD16BC4AB">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:44:24 UTC</createdTime>
+<generatorID>38F37B2D-437C-9252-F257-0C76C5E1EEE2</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<referedAttribute>5A503902-3B2D-A20A-6D84-8A3814680ABD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="43B188DE-88A4-2FE4-69AB-53698F4CDCFE" name="VR PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:43:46 UTC</createdTime>
+<ownerDesignName>logico</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D9A21BAB-B9EF-681D-2230-B4DD1786F7CE</attributeRef>
+<attributeRef>AF3A20BC-EA6A-9FDE-3875-724A9265B2EC</attributeRef>
+<attributeRef>9EFA5665-FD38-76CE-702B-4C5BD16BC4AB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

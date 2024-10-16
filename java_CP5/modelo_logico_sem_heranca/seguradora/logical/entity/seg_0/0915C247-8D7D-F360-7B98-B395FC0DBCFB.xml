@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0915C247-8D7D-F360-7B98-B395FC0DBCFB" name="SR">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:47:04 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_sr" id="22ED1B9A-E167-32F7-E652-3A39AD3A040E">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:47:12 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_renovacoes" id="162E4E00-CE18-1623-488B-AE37E48C10C5">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:47:34 UTC</createdTime>
+<generatorID>10532A65-7B1E-7947-F066-514D0C77D476</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<referedAttribute>5A503902-3B2D-A20A-6D84-8A3814680ABD</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_seguro" id="280E653F-4D30-1E7D-1753-EAE9C1851710">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:47:42 UTC</createdTime>
+<generatorID>0A775237-A68A-EDC1-98E4-B583C6AD7A67</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<referedAttribute>DA23887F-CA76-837C-2B1F-7DB019D1A8F1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="14FA2A82-4FE7-E3C6-8758-D9E8ACD0261E" name="SR PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:47:24 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>22ED1B9A-E167-32F7-E652-3A39AD3A040E</attributeRef>
+<attributeRef>162E4E00-CE18-1623-488B-AE37E48C10C5</attributeRef>
+<attributeRef>280E653F-4D30-1E7D-1753-EAE9C1851710</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

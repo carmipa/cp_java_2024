@@ -1,0 +1,116 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B1F0825E-61C0-AD3C-D9E8-D98D08A8F328" name="SEGUROS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:14:36 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_seguro" id="DA23887F-CA76-837C-2B1F-7DB019D1A8F1">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:14:47 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="5777D718-D646-84C1-737A-822E80C0CA61">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:15:01 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="perfil" id="9BC2F632-7734-CD9E-A38E-38F020732A80">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-08 14:02:52 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="9613F628-1125-4E4F-2844-4E8FFD4D0CD2">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:15:24 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sc" id="016CEC6A-25C7-5FAD-BF7D-F503FF276F6E">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:03:38 UTC</createdTime>
+<generatorID>FC8BFE38-ED58-8E0F-9674-B48C52F47E23</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<referedAttribute>C69DF1F6-A4C3-D692-C4BA-1CAA962B7FEA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sp" id="E5D559CD-DFE8-186D-5BDC-7D167896A11D">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:04:46 UTC</createdTime>
+<generatorID>515D72BC-50B5-D5C2-5820-ABBCECA1A64C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="true"/>
+</engineerTo>
+<referedAttribute>D477AA03-42B5-85D5-D286-09571506EF13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E1596E85-63F8-9F2A-0873-22D55E5117C7" name="SEGUROS PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:14:59 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="A093F042-15DD-8A17-7848-FBFEAA7D3857" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DA23887F-CA76-837C-2B1F-7DB019D1A8F1</attributeRef>
+<attributeRef>016CEC6A-25C7-5FAD-BF7D-F503FF276F6E</attributeRef>
+<attributeRef>E5D559CD-DFE8-186D-5BDC-7D167896A11D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

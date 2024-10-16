@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0CD8B6AD-D875-D6C5-69C1-52F2BD4BCDCC" name="VO">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>38484FB6-98B0-087D-B4E4-6CDC8B122528</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_vo" id="3493E00B-F2AD-BF53-7A1A-D265EBCF60B9">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>0802088C-A438-6101-E46A-7C74636EC907</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VEICULOS_id_veiculo" id="0C295CC4-1303-7996-05D1-FB4EFABEED5C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>1CB66478-A8C4-8A96-5A23-C70F5E053A20</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="22B45738-0840-922D-F060-46891EA0BD7A" referredColumn="29704CE9-BBAA-29D6-6F6C-24F81E269AF9"/>
+</associations>
+</Column>
+<Column name="ORCAMENTOS_id_orcamento" id="F0366943-5C68-8ECC-761E-7C1E9E885428">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>4B8374D6-D08C-EAD9-FE80-605659A446F1</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F7AE9A2-F862-0888-C234-8841EEFB2912" referredColumn="A192A823-BEBA-4524-47B2-CC896B985AFD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8D16DD3F-4371-256B-C952-3B3A7D3D35D8" name="VO_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>56292734-09F6-1C94-4475-FC57262ABA7C</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3493E00B-F2AD-BF53-7A1A-D265EBCF60B9"/>
+<colUsage columnID="0C295CC4-1303-7996-05D1-FB4EFABEED5C"/>
+<colUsage columnID="F0366943-5C68-8ECC-761E-7C1E9E885428"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3108667D-3D6A-0E67-FEEC-D33770B7FD68" name="VO_ORCAMENTOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>E26B384D-8C68-A202-0B56-57134E49BACE</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F0366943-5C68-8ECC-761E-7C1E9E885428"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E39E206B-C511-05DC-C4A5-AF0C83B76D8D" name="VO_VEICULOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>7917518E-9106-38D6-303D-5C55108675E6</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0C295CC4-1303-7996-05D1-FB4EFABEED5C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

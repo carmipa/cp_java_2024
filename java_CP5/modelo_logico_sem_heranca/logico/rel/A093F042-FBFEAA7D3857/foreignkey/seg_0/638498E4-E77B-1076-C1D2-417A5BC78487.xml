@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="638498E4-E77B-1076-C1D2-417A5BC78487" containerWithKeyObject="D5D2D482-1AC0-9EFA-8390-6DCD7E79A0C7" localFKIndex="10C37E36-680F-57CF-BF8B-E989B45F9B48" name="CP_PAGAMENTOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>7535EE90-4DF8-ECAB-6577-EF61DC4DE769</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<referredTableLongName>PAGAMENTOS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>16D182C5-918D-EB04-D469-FD9F82312B47</referredTableID>
+<keyObject>40C7FE99-1A2F-595D-FDBA-4FC98B9B957E</keyObject>
+<referredKeyID>40C7FE99-1A2F-595D-FDBA-4FC98B9B957E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_pagamento</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

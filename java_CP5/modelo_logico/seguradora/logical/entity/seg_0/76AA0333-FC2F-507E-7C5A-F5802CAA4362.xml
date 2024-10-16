@@ -1,0 +1,166 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="76AA0333-FC2F-507E-7C5A-F5802CAA4362" name="PAGAMENTOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:25:15 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_pagamento" id="3D75F35A-D52C-F97F-1391-6183FECB5DE9">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:25:51 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_pagamento" id="3CE910AE-ED03-C705-4BE5-274026CB08F5">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 19:37:07 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_pagamento" id="6F92CD0E-5F5A-B028-978A-BE88450791BE">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 19:37:54 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="forma pagemento" id="CD94B301-6990-91CF-BE02-ADE4F4F8397C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:26:03 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="parcelas" id="18166E6B-D5F8-D8C4-4975-4EB75A3834D9">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:26:22 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor parcela" id="B3773586-9561-D47C-38B5-03AD9DF3665D">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:27:05 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="desconto" id="8192C882-0623-3441-496B-1A08BF143684">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:27:23 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor total" id="B887AB24-387E-E45B-A0A4-4E381C88DFEA">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:27:52 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_sp" id="F8CFB05F-9867-4B02-73FB-1D1DACBACD80">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:04:57 UTC</createdTime>
+<generatorID>9E38856A-3933-84DF-7CCB-DF88F4849054</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<referedAttribute>D477AA03-42B5-85D5-D286-09571506EF13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_cp" id="93691F72-78DB-747E-C6B0-9C0CED0473B4">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:05:48 UTC</createdTime>
+<generatorID>E6E60681-4DDD-C0EE-8F9D-340B5336855D</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<referedAttribute>D49A6025-7D71-7AA4-7ACD-EEBD81A3AFB9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="BF3CBDA9-4147-EEA4-8BA4-106C2B999267" name="PAGAMENTOS PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:26:01 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="6D43DFCE-9B27-662C-EB7E-46707078A319" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3D75F35A-D52C-F97F-1391-6183FECB5DE9</attributeRef>
+<attributeRef>F8CFB05F-9867-4B02-73FB-1D1DACBACD80</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,93 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F7822557-D870-66CA-53F0-34BB556F435B" name="VC">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>3C7DAF20-9360-21D8-351C-E87D7EC1E39B</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_vc" id="5A59135E-44AD-F84E-372F-3E0310223712">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>918FE701-71F6-4A07-AB04-802E13E43AA2</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VEICULOS_id_veiculo" id="85EED2B2-FBFD-E7C5-0EA3-02842B1DA6C0">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>D918C199-E4CE-172E-9ED0-365B1FA2CAF2</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="6536110C-34F4-533A-CDEF-9F191F294B6C" referredColumn="29704CE9-BBAA-29D6-6F6C-24F81E269AF9"/>
+</associations>
+</Column>
+<Column name="CLIENTES_id_cliente" id="C942A1B4-0239-119C-C15B-D17C79FD59D3">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>96E7F794-EEC1-0712-01BA-242FE2DF0389</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="76A240CC-5305-AC95-927A-3304699CF139" referredColumn="E478852E-7CFE-AFBC-CEE2-078A6D0F5D3A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DB2485E-56CC-9652-AB18-3E86280169FC" name="VC_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>1C8FBEEB-3B7B-DA7B-236E-20A0F6576D70</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5A59135E-44AD-F84E-372F-3E0310223712"/>
+<colUsage columnID="85EED2B2-FBFD-E7C5-0EA3-02842B1DA6C0"/>
+<colUsage columnID="C942A1B4-0239-119C-C15B-D17C79FD59D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="57A7D09A-009B-0532-5DDA-24885D960903" name="VC_CLIENTES_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>7A291BA5-C474-825C-0984-EDF9D2662B08</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C942A1B4-0239-119C-C15B-D17C79FD59D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C69EE229-9EE2-5B78-5FA2-A7FF92348EBA" name="VC_VEICULOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 16:20:31 UTC</createdTime>
+<generatorID>415DADDF-44AE-6045-8EEB-8185E87E9FD1</generatorID>
+<ownerDesignName>logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85EED2B2-FBFD-E7C5-0EA3-02842B1DA6C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

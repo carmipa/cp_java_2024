@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A9577754-AC30-1703-9F70-50F224F2E606" name="SEGUROS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>B1F0825E-61C0-AD3C-D9E8-D98D08A8F328</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_seguro" id="FA5F7F1F-6DF2-157C-A21E-8841132F7614">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>DA23887F-CA76-837C-2B1F-7DB019D1A8F1</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo" id="B3906638-C685-B4E0-FBFD-67158A6ECD74">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>5777D718-D646-84C1-737A-822E80C0CA61</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="perfil" id="BE55905B-EDC2-B81B-D95E-F76571B4A4D0">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>9BC2F632-7734-CD9E-A38E-38F020732A80</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valor" id="3F34EB0A-0CAC-BA3D-55E7-FFD86504BDA2">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>9613F628-1125-4E4F-2844-4E8FFD4D0CD2</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="S_C_id_sc" id="59E85C59-ECD7-8762-02CB-8CA8E239E9C1">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>016CEC6A-25C7-5FAD-BF7D-F503FF276F6E</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0E3C676F-700F-0198-60D9-0BD9AC9053A8" referredColumn="B544F615-9E59-54F8-C4FA-C93605CFC54C"/>
+</associations>
+</Column>
+<Column name="S_P_id_sp" id="0673E8C6-25EC-D716-982B-5F3A89FB2E62">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>E5D559CD-DFE8-186D-5BDC-7D167896A11D</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7F68CE69-7DF4-7362-16CF-07D0A3667E15" referredColumn="4FA55313-E067-BEC4-B99D-BC4FDED5B6FE"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BF1B8D33-92EF-08F8-73F4-441E5AC1E794" name="SEGUROS_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>E1596E85-63F8-9F2A-0873-22D55E5117C7</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FA5F7F1F-6DF2-157C-A21E-8841132F7614"/>
+<colUsage columnID="59E85C59-ECD7-8762-02CB-8CA8E239E9C1"/>
+<colUsage columnID="0673E8C6-25EC-D716-982B-5F3A89FB2E62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6F09329C-F3A9-D819-1698-C820C4988795" name="SEGUROS_S_C_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>FC8BFE38-ED58-8E0F-9674-B48C52F47E23</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="59E85C59-ECD7-8762-02CB-8CA8E239E9C1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1C3795B1-3E75-132B-E013-5F6FC6FA7A33" name="SEGUROS_S_P_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-14 15:07:24 UTC</createdTime>
+<generatorID>515D72BC-50B5-D5C2-5820-ABBCECA1A64C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0673E8C6-25EC-D716-982B-5F3A89FB2E62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

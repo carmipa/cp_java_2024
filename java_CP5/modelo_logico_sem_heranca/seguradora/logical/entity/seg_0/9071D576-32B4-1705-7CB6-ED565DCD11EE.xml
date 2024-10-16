@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9071D576-32B4-1705-7CB6-ED565DCD11EE" name="ORCAMENTOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:18:53 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_orcamento" id="4F559448-76DA-2A3C-2795-0FC027F98E24">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:19:11 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data" id="6DB39EEB-B0E0-4D04-A50B-CF31E6964F74">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:17:50 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo_orcamento" id="E38B343E-CB39-3695-23F5-671383349037">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:17:10 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="desconto" id="C692D861-9A0A-7D8F-D959-EE334993D25F">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:19:33 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="valor" id="33D696F7-1436-A37E-1C17-7C638DB610B6">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 12:57:05 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="812886C9-CD51-1960-C87A-E7E475BDC726" name="ORCAMENTOS PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:19:17 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4F559448-76DA-2A3C-2795-0FC027F98E24</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

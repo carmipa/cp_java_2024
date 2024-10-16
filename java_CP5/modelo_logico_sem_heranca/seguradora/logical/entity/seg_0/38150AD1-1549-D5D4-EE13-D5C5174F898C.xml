@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="38150AD1-1549-D5D4-EE13-D5C5174F898C" name="VEICULOS">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:09:27 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_veiculo" id="249C6A81-805D-5D49-D8D3-6EBE59606E59">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:09:34 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tipo" id="E1EE0ED4-9C3B-8F69-7DF9-F671412284AC">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:09:51 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="modelo" id="DC200C88-422D-77CC-8AEE-E9DA85BA8F3B">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:10:16 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fabricante" id="B2543AF8-AE5B-0104-0675-DA23B4D5580C">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:11:08 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ano fabricacao" id="B16B3026-FB32-4FA9-67DF-E43E8258197A">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:11:21 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="placa" id="E7B43150-FA22-F677-8F61-9E95880BDF4D">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:12:04 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AD877044-D095-EB75-8D68-2FD0A63774A9" name="VEICULOS PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-07 09:09:49 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="3DCA1283-6543-CB6C-2C43-2E28AF577FCC" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>249C6A81-805D-5D49-D8D3-6EBE59606E59</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

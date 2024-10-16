@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8F5AF7D7-D94F-4431-025D-220EB6DCF9DF" name="VC">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>25BB0620-9ACB-217B-0524-715080F30771</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_vc" id="ACAD99F5-1D64-9B51-301E-FE7B90C8CD49">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>A80501C6-B2F2-2DEA-35A6-80676F3D302C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CLIENTES_id_cliente" id="D3C4CD05-EF20-4EFD-3ECC-21C47D56D053">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>A9738521-EFB7-E224-FEAD-301ED14E2294</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BDC174D7-A413-F5EA-CF57-648D9E001E6D" referredColumn="3AABF7A3-F0F8-0CC7-E97B-6076CD230CA9"/>
+</associations>
+</Column>
+<Column name="VEICULOS_id_veiculo" id="A4EB680F-FBB8-EA48-568C-76BE4483524E">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>8DA8B6D3-29D7-FB96-4C10-5A8D665520E7</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D75324E3-3954-29A0-3B3B-5B65FE608F78" referredColumn="30C907A2-D6A8-1B98-2546-69A682DADDF7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F377D890-35E1-7CB1-CA20-33A12816904A" name="VC_PK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>0CC27EDB-94D7-C7F7-7C13-81E3E87B9D2C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ACAD99F5-1D64-9B51-301E-FE7B90C8CD49"/>
+<colUsage columnID="D3C4CD05-EF20-4EFD-3ECC-21C47D56D053"/>
+<colUsage columnID="A4EB680F-FBB8-EA48-568C-76BE4483524E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8D178BA0-90FB-FCF9-DEBF-C3787F9574C3" name="VC_CLIENTES_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>337C5C68-7367-C8B5-6A66-78AEBE5BA182</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D3C4CD05-EF20-4EFD-3ECC-21C47D56D053"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="13EFA1BD-1613-1C63-7A5E-F8A02A48B711" name="VC_VEICULOS_FK">
+<createdBy>paulo</createdBy>
+<createdTime>2024-10-10 13:01:12 UTC</createdTime>
+<generatorID>CA2D99F2-9711-DA73-014E-1C16F08B559C</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A4EB680F-FBB8-EA48-568C-76BE4483524E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
