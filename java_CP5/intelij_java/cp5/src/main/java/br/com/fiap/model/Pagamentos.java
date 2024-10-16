@@ -1,8 +1,12 @@
 package br.com.fiap.model;
 
+import br.com.fiap.InterfaceModel.IPagamentos;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
-public class Pagamentos {
+public class Pagamentos implements IPagamentos {
 
     private int idPagemnto;
     private String dataPagamento;
@@ -134,5 +138,15 @@ public class Pagamentos {
                 ", desconto=" + desconto +
                 ", valorTotal=" + valorTotal +
                 '}';
+    }
+
+    @Override
+    public String definirDataPagamentoAtual() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataAtual = LocalDate.now();
+        this.dataPagamento = dataAtual.format(formatter);
+
+        return this.dataPagamento;
     }
 }

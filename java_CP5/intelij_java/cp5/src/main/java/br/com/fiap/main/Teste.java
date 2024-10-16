@@ -1,12 +1,15 @@
 package br.com.fiap.main;
 
-import br.com.fiap.service.*; // Importando as classes de serviço
+import br.com.fiap.UI.ClientesInputHandler;  // Classe que lida com a entrada de dados
+import br.com.fiap.service.ClientesService;
+import br.com.fiap.service.SegurosService;
+import br.com.fiap.service.PagamentosService;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Teste {
 
-    // Códigos de cor ANSI para o terminal
     private static final String RESET = "\033[0m";
     private static final String BOLD = "\033[1m";
     private static final String GREEN = "\033[32m";
@@ -20,6 +23,7 @@ public class Teste {
 
         // Instanciando os serviços
         ClientesService clientesService = new ClientesService();
+        ClientesInputHandler clienteInputHandler = new ClientesInputHandler(clientesService);  // Handler de entrada
         SegurosService segurosService = new SegurosService();
         PagamentosService pagamentosService = new PagamentosService();
 
@@ -48,7 +52,7 @@ public class Teste {
 
             switch (opcao) {
                 case 1:
-                    menuClientes(scanner, clientesService);
+                    menuClientes(scanner, clienteInputHandler);
                     break;
 
                 case 2:
@@ -70,7 +74,7 @@ public class Teste {
         }
     }
 
-    private static void menuClientes(Scanner scanner, ClientesService clientesService) {
+    private static void menuClientes(Scanner scanner, ClientesInputHandler clienteInputHandler) {
         while (true) {
             System.out.println(BOLD + CYAN + "========== MENU CLIENTES ==========" + RESET + "\n" +
                     "\n" + BOLD + "1 - CADASTRAR CLIENTE" + "\n" +
@@ -88,16 +92,16 @@ public class Teste {
 
                 switch (opcao) {
                     case 1:
-                        clientesService.cadastrarClientes(scanner);
+                        clienteInputHandler.cadastrarNovoCliente(scanner);  // Coleta os dados e cadastra o cliente
                         break;
                     case 2:
-                        clientesService.listarTodosClientes();
+                        clienteInputHandler.listarClientes();  // Lista os clientes
                         break;
                     case 3:
-                        clientesService.atualizarClientes();
+                        clienteInputHandler.atualizarCliente(scanner);  // Atualiza cliente
                         break;
                     case 4:
-                        clientesService.deletarClientes();
+                        clienteInputHandler.deletarCliente(scanner);  // Deleta cliente por ID
                         break;
                     case 0:
                         System.out.println(GREEN + "Voltando ao menu principal..." + RESET);

@@ -17,10 +17,13 @@ public class ClientesInputHandler {
         this.clientesService = clientesService;
     }
 
+    // Método para cadastrar novo cliente
     public void cadastrarNovoCliente(Scanner scanner) {
         try {
-
+            // Coleta os dados do cliente
             Clientes cliente = coletarDadosCliente(scanner);
+
+            // Chama o método do serviço para cadastrar o cliente no banco de dados
             clientesService.cadastrarClientes(cliente);
             System.out.println("Cliente cadastrado com sucesso!");
 
@@ -29,29 +32,26 @@ public class ClientesInputHandler {
         }
     }
 
+    // Método para coletar dados de cliente
     private Clientes coletarDadosCliente(Scanner scanner) {
         Clientes cliente = new Clientes();
         Enderecos endereco = new Enderecos();
         Contatos contato = new Contatos();
 
-        System.out.println("===== 1 - CADASTRO DE CLIENTE =====");
-        System.out.println();
-        System.out.println("===== ENDEREÇO DO CLIENTE =====");
-
         // Coleta de dados do cliente
+        System.out.println("===== 1 - CADASTRO DE CLIENTE =====");
         System.out.print("Nome...........................: ");
         cliente.setNome(scanner.nextLine());
         System.out.print("Tipo de Cliente (PF/PJ)........: ");
         cliente.setTipoCliente(scanner.nextLine());
-        System.out.print("Tipo de Documento (CPF/CNP.....: ");
+        System.out.print("Tipo de Documento (CPF/CNPJ)...: ");
         cliente.setTipoDocumento(scanner.nextLine());
         System.out.print("Número do Documento............: ");
         cliente.setNumeroDocumento(scanner.nextLine());
         System.out.print("Data de Nascimento (dd/MM/yyyy): ");
         cliente.setDataNacimento(scanner.nextLine());
-        System.out.println();
 
-        // Coleta de dados do endereço com consulta ao serviço de CEP
+        // Coleta de dados do endereço e consulta via CEP
         coletarEndereco(scanner, endereco);
 
         // Coleta de dados de contato
@@ -64,16 +64,15 @@ public class ClientesInputHandler {
         return cliente;
     }
 
+    // Método para coletar e consultar endereço via CEP
     private void coletarEndereco(Scanner scanner, Enderecos endereco) {
         System.out.println("===== ENDEREÇO DO CLIENTE =====");
-        System.out.println("Número...................:");
-        endereco.setNumero(scanner.nextInt());
-        scanner.nextLine(); // Limpa o buffer
+
         System.out.print("CEP........................: ");
         String cep = scanner.nextLine();
 
         try {
-            // Utiliza a API de CEP para buscar o endereço
+            // Usa a API de CEP para preencher os dados de endereço
             Enderecos enderecoViaCep = Cep.buscarEnderecoPorCep(cep);
 
             if (enderecoViaCep != null) {
@@ -89,9 +88,7 @@ public class ClientesInputHandler {
                 System.out.println("Cidade: " + endereco.getCidade());
                 System.out.println("Estado: " + endereco.getEstado());
             } else {
-                System.out.println();
-                System.err.println("CEP não encontrado. Preencha os dados manualmente.");
-                System.out.println();
+                System.out.println("CEP não encontrado. Preencha os dados manualmente.");
                 System.out.print("Logradouro.................: ");
                 endereco.setLogadouro(scanner.nextLine());
                 System.out.print("Bairro.....................: ");
@@ -106,12 +103,15 @@ public class ClientesInputHandler {
             System.err.println("Erro ao buscar o CEP: " + e.getMessage());
         }
 
+        System.out.print("Número.....................: ");
+        endereco.setNumero(scanner.nextInt());
+        scanner.nextLine(); // Limpa o buffer
         System.out.print("Complemento................: ");
         endereco.setComplemento(scanner.nextLine());
     }
 
+    // Método para coletar dados de contato
     private void coletarContato(Scanner scanner, Contatos contato) {
-        System.out.println();
         System.out.println("===== CONTATOS DO CLIENTE =====");
         System.out.print("Telefone....................: ");
         contato.setTelefone(scanner.nextLine());
@@ -119,5 +119,29 @@ public class ClientesInputHandler {
         contato.setEmail(scanner.nextLine());
         System.out.print("Contato.....................: ");
         contato.setContato(scanner.nextLine());
+    }
+
+    // Métodos adicionais para CRUD (opcional, dependendo das suas necessidades)
+    public void atualizarCliente(Scanner scanner) {
+        System.out.print("Digite o ID do cliente que deseja atualizar: ");
+        int idCliente = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer
+        Clientes cliente = coletarDadosCliente(scanner);
+        cliente.setIdCliente(idCliente);
+        clientesService.atualizarClientes(cliente);
+        System.out.println("Cliente atualizado com sucesso!");
+    }
+
+    public void deletarCliente(Scanner scanner) {
+        System.out.print("Digite o ID do cliente que deseja deletar: ");
+        int idCliente = scanner.nextInt();
+        clientesService.deletarClientes(idCliente);
+        System.out.println("Cliente deletado com sucesso!");
+    }
+
+    public void listarClientes() {
+        clientesService.listarTodosClientes().forEach(cliente -> {
+            System.out.println(cliente);
+        });
     }
 }
