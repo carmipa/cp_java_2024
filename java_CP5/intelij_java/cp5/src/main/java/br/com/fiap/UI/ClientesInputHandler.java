@@ -144,4 +144,52 @@ public class ClientesInputHandler {
             System.out.println(cliente);
         });
     }
+
+    // Método para buscar e exibir cliente por ID
+    public void buscarClientePorId(Scanner scanner) {
+        System.out.print("Digite o ID do cliente: ");
+        int id = scanner.nextInt();
+        scanner.nextLine(); // Limpa o buffer
+
+        Clientes cliente = clientesService.buscarClientesPorId(id);
+
+        if (cliente != null) {
+            exibirDadosCliente(cliente); // Exibe os dados do cliente encontrado
+        } else {
+            System.out.println("Cliente não encontrado.");
+        }
+    }
+
+    // Método para exibir os dados de um cliente
+    private void exibirDadosCliente(Clientes cliente) {
+        System.out.println("===== DADOS DO CLIENTE =====");
+        System.out.println("ID: " + cliente.getIdCliente());
+        System.out.println("Nome: " + cliente.getNome());
+        System.out.println("Tipo de Cliente: " + cliente.getTipoCliente());
+        System.out.println("Tipo de Documento: " + cliente.getTipoDocumento());
+        System.out.println("Número de Documento: " + cliente.getNumeroDocumento());
+        System.out.println("Data de Nascimento: " + cliente.getDataNacimento());
+
+        // Exibe dados do endereço
+        Enderecos endereco = cliente.getEnderecos();
+        if (endereco != null) {
+            System.out.println("===== ENDEREÇO =====");
+            System.out.println("CEP: " + endereco.getCep());
+            System.out.println("Logradouro: " + endereco.getLogadouro());
+            System.out.println("Número: " + endereco.getNumero());
+            System.out.println("Complemento: " + endereco.getComplemento());
+            System.out.println("Cidade: " + endereco.getCidade());
+            System.out.println("Estado: " + endereco.getEstado());
+        }
+
+        // Exibe dados de contato
+        Contatos contato = cliente.getContatos();
+        if (contato != null) {
+            System.out.println("===== CONTATOS =====");
+            System.out.println("Telefone: " + contato.getTelefone());
+            System.out.println("E-mail: " + contato.getEmail());
+            System.out.println("Contato: " + contato.getContato());
+        }
+    }
+    
 }
