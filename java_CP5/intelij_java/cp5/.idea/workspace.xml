@@ -5,10 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99fa952c-d75e-4e8f-bbbc-cba3b1c5d9bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/ExternalInterface/CpfCnpj.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/ClientesDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/ClientesDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/EnderecosDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/EnderecosDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/ExternalInterface/Cep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/ExternalInterface/Cep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Clientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Clientes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/builder/ClientesBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/builder/ContatosBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/builder/EnderecosBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/builder/PagamentosBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Enderecos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Enderecos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +131,8 @@
       <workItem from="1729027255644" duration="2268000" />
       <workItem from="1729036633906" duration="126000" />
       <workItem from="1729085679757" duration="7100000" />
-      <workItem from="1729093163085" duration="476000" />
+      <workItem from="1729093163085" duration="1487000" />
+      <workItem from="1729094677130" duration="4144000" />
     </task>
     <servers />
   </component>

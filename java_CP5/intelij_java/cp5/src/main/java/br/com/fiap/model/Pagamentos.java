@@ -3,7 +3,6 @@ package br.com.fiap.model;
 import br.com.fiap.InterfaceModel.IPagamentos;
 
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 public class Pagamentos implements IPagamentos {
@@ -142,11 +141,7 @@ public class Pagamentos implements IPagamentos {
 
     @Override
     public String definirDataPagamentoAtual() {
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        LocalDate dataAtual = LocalDate.now();
-        this.dataPagamento = dataAtual.format(formatter);
-
+        this.dataPagamento = LocalDate.now().toString();
         return this.dataPagamento;
     }
 }

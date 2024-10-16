@@ -9,7 +9,7 @@ public class Enderecos {
     private int idEndereco;
     private int numero;
     private String cep;
-    private String logadouro;
+    private String logradouro;
     private String bairro;
     @SerializedName("localidade")  // Mapeia o campo "localidade" da resposta JSON para "cidade"
     private String cidade;
@@ -20,11 +20,11 @@ public class Enderecos {
     public Enderecos() {
     }
 
-    public Enderecos(int idEndereco, int numero, String cep, String logadouro, String bairro, String cidade, String estado, String complemento) {
+    public Enderecos(int idEndereco, int numero, String cep, String logradouro, String bairro, String cidade, String estado, String complemento) {
         this.idEndereco = idEndereco;
         this.numero = numero;
         this.cep = cep;
-        this.logadouro = logadouro;
+        this.logradouro = logradouro;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
@@ -47,12 +47,12 @@ public class Enderecos {
         this.numero = numero;
     }
 
-    public String getLogadouro() {
-        return logadouro;
+    public String getLogradouro() {
+        return logradouro;
     }
 
     public void setLogadouro(String logadouro) {
-        this.logadouro = logadouro;
+        this.logradouro = logadouro;
     }
 
     public String getCep() {
@@ -99,12 +99,12 @@ public class Enderecos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Enderecos enderecos)) return false;
-        return idEndereco == enderecos.idEndereco && numero == enderecos.numero && Objects.equals(cep, enderecos.cep) && Objects.equals(logadouro, enderecos.logadouro) && Objects.equals(bairro, enderecos.bairro) && Objects.equals(cidade, enderecos.cidade) && Objects.equals(estado, enderecos.estado) && Objects.equals(complemento, enderecos.complemento);
+        return idEndereco == enderecos.idEndereco && numero == enderecos.numero && Objects.equals(cep, enderecos.cep) && Objects.equals(logradouro, enderecos.logradouro) && Objects.equals(bairro, enderecos.bairro) && Objects.equals(cidade, enderecos.cidade) && Objects.equals(estado, enderecos.estado) && Objects.equals(complemento, enderecos.complemento);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idEndereco, numero, cep, logadouro, bairro, cidade, estado, complemento);
+        return Objects.hash(idEndereco, numero, cep, logradouro, bairro, cidade, estado, complemento);
     }
 
     @Override
@@ -113,7 +113,7 @@ public class Enderecos {
                 "idEndereco=" + idEndereco +
                 ", numero=" + numero +
                 ", cep='" + cep + '\'' +
-                ", logadouro='" + logadouro + '\'' +
+                ", logradouro='" + logradouro + '\'' +
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +

@@ -1,6 +1,8 @@
 package br.com.fiap.main;
 
-import br.com.fiap.UI.ClientesInputHandler;  // Classe que lida com a entrada de dados
+import br.com.fiap.UI.ClientesInputHandler;
+import br.com.fiap.UI.SegurosInputHandler;
+import br.com.fiap.UI.PagamentosInputHandler;
 import br.com.fiap.service.ClientesService;
 import br.com.fiap.service.SegurosService;
 import br.com.fiap.service.PagamentosService;
@@ -23,9 +25,13 @@ public class Teste {
 
         // Instanciando os serviços
         ClientesService clientesService = new ClientesService();
-        ClientesInputHandler clienteInputHandler = new ClientesInputHandler(clientesService);  // Handler de entrada
         SegurosService segurosService = new SegurosService();
         PagamentosService pagamentosService = new PagamentosService();
+
+        // Instanciando os handlers de entrada
+        ClientesInputHandler clienteInputHandler = new ClientesInputHandler(clientesService);
+        SegurosInputHandler segurosInputHandler = new SegurosInputHandler(segurosService);
+        PagamentosInputHandler pagamentosInputHandler = new PagamentosInputHandler(pagamentosService);
 
         while (true) {
             System.out.println(BOLD + GREEN + "****************************************************************************************" +
@@ -56,11 +62,11 @@ public class Teste {
                     break;
 
                 case 2:
-                    menuSeguros(scanner, segurosService);
+                    menuSeguros(scanner, segurosInputHandler);
                     break;
 
                 case 3:
-                    menuPagamentos(scanner, pagamentosService);
+                    menuPagamentos(scanner, pagamentosInputHandler);
                     break;
 
                 case 0:
@@ -89,28 +95,26 @@ public class Teste {
             int opcao;
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // Limpar o buffer
 
                 switch (opcao) {
                     case 1:
-                        clienteInputHandler.cadastrarNovoCliente(scanner);  // Coleta os dados e cadastra o cliente
+                        clienteInputHandler.cadastrarNovoCliente(scanner);
                         break;
                     case 2:
-                        clienteInputHandler.listarClientes();  // Lista os clientes
+                        clienteInputHandler.listarClientes();
                         break;
                     case 3:
-                        clienteInputHandler.atualizarCliente(scanner);  // Atualiza cliente
+                        clienteInputHandler.atualizarCliente(scanner);
                         break;
                     case 4:
-                        clienteInputHandler.deletarCliente(scanner);  // Deleta cliente por ID
+                        clienteInputHandler.deletarCliente(scanner);
                         break;
-                    case 5: // Busca cliente por ID
+                    case 5:
                         clienteInputHandler.buscarClientePorId(scanner);
                         break;
                     case 0:
-                        System.out.println(GREEN + "Voltando ao menu principal..." + RESET);
                         return;
-
                     default:
                         System.err.println(RED + "Opção inválida!" + RESET);
                 }
@@ -121,7 +125,7 @@ public class Teste {
         }
     }
 
-    private static void menuSeguros(Scanner scanner, SegurosService segurosService) {
+    private static void menuSeguros(Scanner scanner, SegurosInputHandler segurosInputHandler) {
         while (true) {
             System.out.println(BOLD + CYAN + "========== MENU SEGUROS ==========" + RESET + "\n" +
                     "\n" + BOLD + "1 - CADASTRAR SEGURO" + "\n" +
@@ -136,27 +140,26 @@ public class Teste {
             int opcao;
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // Limpar o buffer
 
                 switch (opcao) {
                     case 1:
-                        segurosService.cadastrarSeguro(scanner);
+                        segurosInputHandler.cadastrarNovoSeguro(scanner);
                         break;
                     case 2:
-                        segurosService.listarSeguros();
+                        segurosInputHandler.listarSeguros();
                         break;
                     case 3:
-                        segurosService.atualizarSeguro(scanner);
+                        segurosInputHandler.atualizarSeguro(scanner);
                         break;
                     case 4:
-                        segurosService.deletarSeguro(scanner);
+                        segurosInputHandler.deletarSeguro(scanner);
+                        break;
                     case 5:
-                        segurosService.buscarSeguroPorId(scanner);
+                        segurosInputHandler.buscarSeguroPorId(scanner);
                         break;
                     case 0:
-                        System.out.println(GREEN + "Voltando ao menu principal..." + RESET);
                         return;
-
                     default:
                         System.err.println(RED + "Opção inválida!" + RESET);
                 }
@@ -167,7 +170,7 @@ public class Teste {
         }
     }
 
-    private static void menuPagamentos(Scanner scanner, PagamentosService pagamentosService) {
+    private static void menuPagamentos(Scanner scanner, PagamentosInputHandler pagamentosInputHandler) {
         while (true) {
             System.out.println(BOLD + CYAN + "========== MENU ORÇAMENTO E PAGAMENTO ==========" + RESET + "\n" +
                     "\n" + BOLD + "1 - CADASTRAR NOVO PAGAMENTO" + "\n" +
@@ -182,27 +185,26 @@ public class Teste {
             int opcao;
             try {
                 opcao = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // Limpar o buffer
 
                 switch (opcao) {
                     case 1:
-                        pagamentosService.cadastrarPagamento(scanner);
+                        pagamentosInputHandler.cadastrarNovoPagamento(scanner);
                         break;
                     case 2:
-                        pagamentosService.listarPagamentos();
+                        pagamentosInputHandler.listarPagamentos();
                         break;
                     case 3:
-                        pagamentosService.atualizarPagamento(scanner);
+                        pagamentosInputHandler.atualizarPagamento(scanner);
                         break;
                     case 4:
-                        pagamentosService.deletarPagamento(scanner);
+                        pagamentosInputHandler.deletarPagamento(scanner);
+                        break;
                     case 5:
-                        pagamentosService.buscarPagamentoPorId(scanner);
+                        pagamentosInputHandler.buscarPagamentoPorId(scanner);
                         break;
                     case 0:
-                        System.out.println(GREEN + "Voltando ao menu principal..." + RESET);
                         return;
-
                     default:
                         System.err.println(RED + "Opção inválida!" + RESET);
                 }

@@ -22,7 +22,7 @@ public class EnderecosDAOImpl implements EnderecosDAO {
 
             stmt.setInt(1, enderecos.getNumero());
             stmt.setString(2, enderecos.getCep());
-            stmt.setString(3, enderecos.getLogadouro());
+            stmt.setString(3, enderecos.getLogradouro());
             stmt.setString(4, enderecos.getBairro());
             stmt.setString(5, enderecos.getCidade());
             stmt.setString(6, enderecos.getEstado());
@@ -101,7 +101,7 @@ public class EnderecosDAOImpl implements EnderecosDAO {
 
             stmt.setInt(1, enderecos.getNumero());
             stmt.setString(2, enderecos.getCep());
-            stmt.setString(3, enderecos.getLogadouro());
+            stmt.setString(3, enderecos.getLogradouro());
             stmt.setString(4, enderecos.getBairro());
             stmt.setString(5, enderecos.getCidade());
             stmt.setString(6, enderecos.getEstado());
