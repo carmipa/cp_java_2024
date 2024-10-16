@@ -1,5 +1,6 @@
 package br.com.fiap.UI;
 
+import br.com.fiap.ExternalInterface.CpfCnpj;
 import br.com.fiap.model.Clientes;
 import br.com.fiap.model.Contatos;
 import br.com.fiap.model.Enderecos;
@@ -21,8 +22,10 @@ public class ClientesInputHandler {
     public void cadastrarNovoCliente(Scanner scanner) {
         try {
             Clientes cliente = coletarDadosCliente(scanner);
-            clientesService.cadastrarClientes(cliente);
-            System.out.println("\033[32m\033[1mCliente cadastrado com sucesso!\033[0m");
+            if (cliente != null) {
+                clientesService.cadastrarClientes(cliente);
+                System.out.println("\033[32m\033[1mCliente cadastrado com sucesso!\033[0m");
+            }
         } catch (IllegalArgumentException e) {
             System.err.println("\033[31mErro ao cadastrar cliente: " + e.getMessage() + "\033[0m");
         }
@@ -37,16 +40,44 @@ public class ClientesInputHandler {
         System.out.println("\033[34m===== DADOS DO CLIENTE =====\033[0m");
 
         try {
-            System.out.print("Nome...........................: ");
-            cliente.setNome(scanner.nextLine());
-            System.out.print("Tipo de Cliente (PF/PJ)........: ");
-            cliente.setTipoCliente(scanner.nextLine());
-            System.out.print("Tipo de Documento (CPF/CNPJ)...: ");
-            cliente.setTipoDocumento(scanner.nextLine());
-            System.out.print("Número do Documento............: ");
-            cliente.setNumeroDocumento(scanner.nextLine());
-            System.out.print("Data de Nascimento (dd/MM/yyyy): ");
-            cliente.setDataNacimento(scanner.nextLine());
+            while (true) {
+                System.out.print("Nome...........................: ");
+                cliente.setNome(scanner.nextLine().trim());
+                if (!cliente.getNome().isEmpty()) break;
+                System.err.println("Nome não pode ser vazio.");
+            }
+
+            while (true) {
+                System.out.print("Tipo de Cliente (PF/PJ)........: ");
+                cliente.setTipoCliente(scanner.nextLine().trim());
+                if (!cliente.getTipoCliente().isEmpty()) break;
+                System.err.println("Tipo de Cliente não pode ser vazio.");
+            }
+
+            while (true) {
+                System.out.print("Documento (CPF ou CNPJ)........: ");
+                String documento = scanner.nextLine().trim();
+                if (documento.matches("\\d+")) {
+                    String tipoDocumento = CpfCnpj.validarDocumento(documento); // Valida o documento
+                    if (tipoDocumento.equals("CPF") || tipoDocumento.equals("CNPJ")) {
+                        cliente.setNumeroDocumento(documento);
+                        cliente.setTipoDocumento(tipoDocumento); // Define o tipo de documento
+                        System.out.println("Documento válido (" + tipoDocumento + ").");
+                        break;
+                    } else {
+                        System.err.println(tipoDocumento); // Exibe o erro caso o documento seja inválido
+                    }
+                } else {
+                    System.err.println("Documento inválido! Deve conter apenas dígitos.");
+                }
+            }
+
+            while (true) {
+                System.out.print("Data de Nascimento (dd/MM/yyyy): ");
+                cliente.setDataNacimento(scanner.nextLine().trim());
+                if (!cliente.getDataNacimento().isEmpty()) break;
+                System.err.println("Data de Nascimento não pode ser vazia.");
+            }
             System.out.println();
 
             coletarEndereco(scanner, endereco);
@@ -67,47 +98,65 @@ public class ClientesInputHandler {
     private void coletarEndereco(Scanner scanner, Enderecos endereco) {
         System.out.println("\033[34m===== ENDEREÇO DO CLIENTE =====\033[0m");
         try {
-            System.out.print("Número.........................: ");
-            endereco.setNumero(scanner.nextInt());
-            scanner.nextLine(); // Limpa o buffer do scanner
-            System.out.print("CEP............................: ");
-            String cep = scanner.nextLine();
-
-            try {
-                Enderecos enderecoViaCep = Cep.buscarEnderecoPorCep(cep);
-
-                if (enderecoViaCep != null) {
-                    endereco.setCep(cep);
-                    endereco.setLogadouro(enderecoViaCep.getLogradouro());
-                    endereco.setBairro(enderecoViaCep.getBairro());
-                    endereco.setCidade(enderecoViaCep.getCidade());
-                    endereco.setEstado(enderecoViaCep.getEstado());
-
-                    System.out.println("Endereço encontrado:");
-                    System.out.println("Logradouro: " + endereco.getLogradouro());
-                    System.out.println("Bairro: " + endereco.getBairro());
-                    System.out.println("Cidade: " + endereco.getCidade());
-                    System.out.println("Estado: " + endereco.getEstado());
-                } else {
-                    System.out.println();
-                    System.err.println("CEP não encontrado. Preencha os dados manualmente.");
-                    System.out.println();
-                    System.out.print("Logradouro.....................: ");
-                    endereco.setLogadouro(scanner.nextLine());
-                    System.out.print("Bairro.........................: ");
-                    endereco.setBairro(scanner.nextLine());
-                    System.out.print("Cidade.........................: ");
-                    endereco.setCidade(scanner.nextLine());
-                    System.out.print("Estado.........................: ");
-                    endereco.setEstado(scanner.nextLine());
+            while (true) {
+                System.out.print("Número.........................: ");
+                String numero = scanner.nextLine().trim();
+                if (numero.matches("\\d+")) {
+                    endereco.setNumero(Integer.parseInt(numero));
+                    break;
                 }
-
-            } catch (IOException | InterruptedException e) {
-                System.err.println("Erro ao buscar o CEP: " + e.getMessage());
+                System.err.println("Número deve conter apenas dígitos.");
             }
 
-            System.out.print("Complemento....................: ");
-            endereco.setComplemento(scanner.nextLine());
+            while (true) {
+                System.out.print("CEP............................: ");
+                String cep = scanner.nextLine().trim();
+                if (cep.matches("\\d{5}-\\d{3}")) {
+                    try {
+                        Enderecos enderecoViaCep = Cep.buscarEnderecoPorCep(cep);
+                        if (enderecoViaCep != null) {
+                            endereco.setCep(cep);
+                            endereco.setLogadouro(enderecoViaCep.getLogradouro());
+                            endereco.setBairro(enderecoViaCep.getBairro());
+                            endereco.setCidade(enderecoViaCep.getCidade());
+                            endereco.setEstado(enderecoViaCep.getEstado());
+
+                            System.out.println("Endereço encontrado:");
+                            System.out.println("Logradouro: " + endereco.getLogradouro());
+                            System.out.println("Bairro: " + endereco.getBairro());
+                            System.out.println("Cidade: " + endereco.getCidade());
+                            System.out.println("Estado: " + endereco.getEstado());
+                        } else {
+                            System.out.println();
+                            System.err.println("CEP não encontrado. Preencha os dados manualmente.");
+                            System.out.println();
+                            System.out.print("Logradouro.....................: ");
+                            endereco.setLogadouro(scanner.nextLine().trim());
+                            System.out.print("Bairro.........................: ");
+                            endereco.setBairro(scanner.nextLine().trim());
+                            System.out.print("Cidade.........................: ");
+                            endereco.setCidade(scanner.nextLine().trim());
+                            System.out.print("Estado.........................: ");
+                            endereco.setEstado(scanner.nextLine().trim());
+                        }
+                        break;
+                    } catch (IOException | InterruptedException e) {
+                        System.err.println("Erro ao buscar o CEP: " + e.getMessage());
+                    }
+                } else {
+                    System.err.println("CEP deve estar no formato 12345-678.");
+                }
+            }
+
+            while (true) {
+                System.out.print("Complemento....................: ");
+                String complemento = scanner.nextLine().trim();
+                if (!complemento.isEmpty()) {
+                    endereco.setComplemento(complemento);
+                    break;
+                }
+                System.err.println("Complemento não pode ser vazio.");
+            }
 
         } catch (InputMismatchException e) {
             System.err.println("\033[31mErro: Entrada inválida. Por favor, insira os valores corretamente.\033[0m");
@@ -119,12 +168,29 @@ public class ClientesInputHandler {
     private void coletarContato(Scanner scanner, Contatos contato) {
         System.out.println("\033[34m===== CONTATOS DO CLIENTE =====\033[0m");
         try {
-            System.out.print("Telefone.......................: ");
-            contato.setTelefone(scanner.nextLine());
-            System.out.print("E-mail.........................: ");
-            contato.setEmail(scanner.nextLine());
-            System.out.print("Contato........................: ");
-            contato.setContato(scanner.nextLine());
+            while (true) {
+                System.out.print("Telefone.......................: ");
+                String telefone = scanner.nextLine().trim();
+                if (telefone.matches("\\d+")) {
+                    contato.setTelefone(telefone);
+                    break;
+                }
+                System.err.println("Telefone deve conter apenas dígitos.");
+            }
+
+            while (true) {
+                System.out.print("E-mail.........................: ");
+                contato.setEmail(scanner.nextLine().trim());
+                if (!contato.getEmail().isEmpty()) break;
+                System.err.println("E-mail não pode ser vazio.");
+            }
+
+            while (true) {
+                System.out.print("Contato........................: ");
+                contato.setContato(scanner.nextLine().trim());
+                if (!contato.getContato().isEmpty()) break;
+                System.err.println("Contato não pode ser vazio.");
+            }
         } catch (InputMismatchException e) {
             System.err.println("\033[31mErro: Entrada inválida. Por favor, insira os valores corretamente.\033[0m");
             scanner.nextLine(); // Limpa o buffer do scanner
@@ -220,5 +286,16 @@ public class ClientesInputHandler {
             System.out.println("E-mail: " + contato.getEmail());
             System.out.println("Contato: " + contato.getContato());
         }
+    }
+
+    private void preencherEnderecoManual(Scanner scanner, Enderecos endereco) {
+        System.out.print("Logradouro.....................: ");
+        endereco.setLogadouro(scanner.nextLine().trim());
+        System.out.print("Bairro.........................: ");
+        endereco.setBairro(scanner.nextLine().trim());
+        System.out.print("Cidade.........................: ");
+        endereco.setCidade(scanner.nextLine().trim());
+        System.out.print("Estado.........................: ");
+        endereco.setEstado(scanner.nextLine().trim());
     }
 }
