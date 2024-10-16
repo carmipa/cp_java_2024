@@ -2,6 +2,8 @@
 
 Bem-vindo ao repositório do nosso projeto de Java para 2024! Aqui você encontrará todas as informações e recursos relacionados ao nosso trabalho.
 
+### Professor: Tiago Mendes Ferrer
+
 ## 👥 Integrantes
 
 ### Paulo André Carminati
