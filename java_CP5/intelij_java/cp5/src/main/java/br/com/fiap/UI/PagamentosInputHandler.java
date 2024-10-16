@@ -77,4 +77,24 @@ public class PagamentosInputHandler {
             System.out.println(pagamentos);
         });
     }
+
+    public void buscarPagamentoPorId(Scanner scanner){
+        System.out.println("Digite o ID do pagamento: ");
+        int id = scanner.nextInt();
+        scanner.nextLine();
+        Pagamentos pagamento = pagamentosService.buscarPagamentosPorId(id);
+        System.out.println(pagamento);
+    }
+
+    private void exibirDadosPagamento(Pagamentos pagamentos){
+        System.out.println("===== DADOS DO PAGAMENTO =====");
+        System.out.println("ID...........................: " + pagamentos.getIdPagemnto());
+        System.out.println("Data de Pagamento............: " + pagamentos.getDataPagamento());
+        System.out.println("Tipo de Pagamento............: " + pagamentos.getTipoPagamento());
+        System.out.println("Forma de Pagamento...........: " + pagamentos.getFormaPagamento());
+        System.out.println("Parcelas......................: " + pagamentos.getParcelas());
+        System.out.println("Valor da Parcela.............: " + pagamentos.getValorParcela());
+        System.out.println("Desconto......................: " + pagamentos.getDesconto());
+        System.out.println("Valor Total...................: " + pagamentos.getValorTotal());
+    }
 }

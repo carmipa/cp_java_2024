@@ -81,6 +81,7 @@ public class Teste {
                     "2 - LISTAR CLIENTES" + "\n" +
                     "3 - ATUALIZAR CLIENTE" + "\n" +
                     "4 - DELETAR CLIENTE" + "\n" +
+                    "5 - BUSCAR CLIENTE POR ID" + "\n" +
                     "0 - VOLTAR" + RESET + "\n");
 
             System.out.println(BOLD + BLUE + "Escolha uma das opções: " + RESET);
@@ -103,6 +104,9 @@ public class Teste {
                     case 4:
                         clienteInputHandler.deletarCliente(scanner);  // Deleta cliente por ID
                         break;
+                    case 5: // Busca cliente por ID
+                        clienteInputHandler.buscarClientePorId(scanner);
+                        break;
                     case 0:
                         System.out.println(GREEN + "Voltando ao menu principal..." + RESET);
                         return;
@@ -124,6 +128,7 @@ public class Teste {
                     "2 - LISTAR SEGUROS" + "\n" +
                     "3 - ATUALIZAR SEGURO" + "\n" +
                     "4 - DELETAR SEGURO" + "\n" +
+                    "5 - BUSCAR SEGURO POR ID" + "\n" +
                     "0 - VOLTAR" + RESET + "\n");
 
             System.out.println(BOLD + BLUE + "Escolha uma das opções: " + RESET);
@@ -145,6 +150,8 @@ public class Teste {
                         break;
                     case 4:
                         segurosService.deletarSeguro(scanner);
+                    case 5:
+                        segurosService.buscarSeguroPorId(scanner);
                         break;
                     case 0:
                         System.out.println(GREEN + "Voltando ao menu principal..." + RESET);
@@ -167,6 +174,7 @@ public class Teste {
                     "2 - LISTAR PAGAMENTOS" + "\n" +
                     "3 - ATUALIZAR PAGAMENTO" + "\n" +
                     "4 - DELETAR PAGAMENTO" + "\n" +
+                    "5 - BUSCAR PAGAMENTO POR ID" + "\n" +
                     "0 - VOLTAR" + RESET + "\n");
 
             System.out.println(BOLD + BLUE + "Escolha uma das opções: " + RESET);
@@ -188,6 +196,8 @@ public class Teste {
                         break;
                     case 4:
                         pagamentosService.deletarPagamento(scanner);
+                    case 5:
+                        pagamentosService.buscarPagamentoPorId(scanner);
                         break;
                     case 0:
                         System.out.println(GREEN + "Voltando ao menu principal..." + RESET);

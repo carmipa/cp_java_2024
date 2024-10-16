@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99fa952c-d75e-4e8f-bbbc-cba3b1c5d9bc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/InterfaceModel/IPagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/InterfaceModel/IPagamentos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +111,7 @@
       <workItem from="1729025840300" duration="490000" />
       <workItem from="1729027255644" duration="2268000" />
       <workItem from="1729036633906" duration="126000" />
-      <workItem from="1729085679757" duration="4185000" />
+      <workItem from="1729085679757" duration="4780000" />
     </task>
     <servers />
   </component>
