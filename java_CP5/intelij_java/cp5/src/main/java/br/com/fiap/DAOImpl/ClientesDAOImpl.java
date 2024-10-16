@@ -36,7 +36,7 @@ public class ClientesDAOImpl implements ClientesDAO {
                 throw new SQLException("Falha ao obter próximo valor da sequência seq_clientes.");
             }
 
-            String sqlCliente = "INSERT INTO clientes (id_cli, tipo_cliente, nome, tipo_documento, numero_documento, data_nascimento, enderecos_id_endereco, contatos_id_contato) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sqlCliente = "INSERT INTO clientes (id_cliente, tipo_cliente, nome, tipo_documento, numero_documento, data_nascimento, enderecos_id_endereco, contatos_id_contato) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmtCliente = connection.prepareStatement(sqlCliente);
 
             stmtCliente.setInt(1, idCliente);
@@ -62,7 +62,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 
     @Override
     public Clientes readById(int id) {
-        String sql = "SELECT * FROM clientes WHERE id_cli = ?";
+        String sql = "SELECT * FROM clientes WHERE id_cliente = ?";
         Clientes clientes = null;
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -72,7 +72,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 
             if (rs.next()) {
                 clientes = new Clientes(
-                        rs.getInt("id_cli"),
+                        rs.getInt("id_cliente"),
                         rs.getString("tipo_cliente"),
                         rs.getString("nome"),
                         rs.getString("tipo_documento"),
@@ -96,7 +96,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 
             while (rs.next()) {
                 Clientes cliente = new Clientes(
-                        rs.getInt("id_cli"),
+                        rs.getInt("id_cliente"),
                         rs.getString("tipo_cliente"),
                         rs.getString("nome"),
                         rs.getString("tipo_documento"),
@@ -113,7 +113,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 
     @Override
     public void update(Clientes cliente) {
-        String sql = "UPDATE clientes SET tipo_cliente = ?, nome = ?, tipo_documento = ?, numero_documento = ?, data_nascimento = ? WHERE id_cli = ?";
+        String sql = "UPDATE clientes SET tipo_cliente = ?, nome = ?, tipo_documento = ?, numero_documento = ?, data_nascimento = ? WHERE id_cliente = ?";
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
@@ -132,7 +132,7 @@ public class ClientesDAOImpl implements ClientesDAO {
 
     @Override
     public void delete(int id) {
-        String sql = "DELETE FROM clientes WHERE id_cli = ?";
+        String sql = "DELETE FROM clientes WHERE id_cliente = ?";
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
