@@ -13,11 +13,10 @@ import java.util.List;
 
 public class SegurosDAOImpl implements SegurosDAO {
     @Override
-    public void create(Seguros seguros) {
+    public void create(Seguros seguros, Connection connection) throws SQLException {
 
         String sql = "INSERT INTO seguros (tipo, perfil, valor) VALUES (?, ?, ?)";
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, seguros.getTipoSeguro());
             stmt.setString(2, seguros.getPerfil());
@@ -25,10 +24,8 @@ public class SegurosDAOImpl implements SegurosDAO {
 
             stmt.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new SQLException("Erro ao inserir seguro", e);
         }
-
-
     }
 
     @Override
