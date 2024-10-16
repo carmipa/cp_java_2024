@@ -13,10 +13,8 @@ import java.util.List;
 
 public class EnderecosDAOImpl implements EnderecosDAO {
 
-    @Override
     public void create(Enderecos enderecos) {
-
-        String sql = "INSERT INTO enderecos(numero, cep, logradouro, bairro, cidade, estado, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO enderecos (numero, cep, logradouro, bairro, cidade, estado, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
@@ -26,13 +24,17 @@ public class EnderecosDAOImpl implements EnderecosDAO {
             stmt.setString(4, enderecos.getBairro());
             stmt.setString(5, enderecos.getCidade());
             stmt.setString(6, enderecos.getEstado());
+
+            // Garantir que o complemento não seja nulo ou vazio
+            if (enderecos.getComplemento() == null || enderecos.getComplemento().isEmpty()) {
+                throw new IllegalArgumentException("O campo complemento é obrigatório e não pode ser vazio.");
+            }
             stmt.setString(7, enderecos.getComplemento());
 
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

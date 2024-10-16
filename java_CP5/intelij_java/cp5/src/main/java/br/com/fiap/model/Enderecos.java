@@ -92,6 +92,9 @@ public class Enderecos {
     }
 
     public void setComplemento(String complemento) {
+        if (complemento == null || complemento.trim().isEmpty()) {
+            throw new IllegalArgumentException("O complemento não pode ser vazio.");
+        }
         this.complemento = complemento;
     }
 

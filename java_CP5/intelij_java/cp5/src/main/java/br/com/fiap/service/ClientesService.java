@@ -9,6 +9,8 @@ import java.util.List;
 
 public class ClientesService {
 
+
+
     private ClientesDAO clientesDAO;
 
     public ClientesService() {
@@ -16,20 +18,8 @@ public class ClientesService {
     }
 
     public void cadastrarClientes(Clientes clientes) {
-
-        // Validação do documento antes de cadastrar
-        if (clientes.getTipoDocumento().equalsIgnoreCase("CPF")) {
-            if (!DocumentoUtil.isCPF(clientes.getNumeroDocumento())) {
-                throw new IllegalArgumentException("CPF inválido.");
-            }
-        } else if (clientes.getTipoDocumento().equalsIgnoreCase("CNPJ")) {
-            if (!DocumentoUtil.isCNPJ(clientes.getNumeroDocumento())) {
-                throw new IllegalArgumentException("CNPJ inválido.");
-            }
-        }
-
-        // Caso o documento seja válido, cadastra o cliente
         clientesDAO.create(clientes);
+
     }
 
     public Clientes buscarClientesPorId(int id) {
@@ -47,4 +37,7 @@ public class ClientesService {
     public void deletarClientes(int id) {
         clientesDAO.delete(id);
     }
+
+
+
 }
