@@ -14,20 +14,28 @@ import java.util.List;
 public class ContatosDAOImpl implements ContatosDAO {
 
     @Override
-    public void create(Contatos contatos) {
-        String sql = "INSERT INTO contatos (telefone, email, contato) VALUES (?, ?, ?)";
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
-
-            stmt.setString(1, contatos.getTelefone());
-            stmt.setString(2, contatos.getEmail());
-            stmt.setString(3, contatos.getContato());
-
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public int create(Contatos contato, Connection connection) throws SQLException {
+        String seqSql = "SELECT seq_contatos.NEXTVAL FROM dual";
+        PreparedStatement seqStmt = connection.prepareStatement(seqSql);
+        ResultSet rsSeq = seqStmt.executeQuery();
+        int idContato = 0;
+        if (rsSeq.next()) {
+            idContato = rsSeq.getInt(1);
+        } else {
+            throw new SQLException("Falha ao obter próximo valor da sequência seq_contatos.");
         }
 
+        String sql = "INSERT INTO contatos (id_contato, telefone, email, contato) VALUES (?, ?, ?, ?)";
+        PreparedStatement stmt = connection.prepareStatement(sql);
+
+        stmt.setInt(1, idContato);
+        stmt.setString(2, contato.getTelefone());
+        stmt.setString(3, contato.getEmail());
+        stmt.setString(4, contato.getContato());
+
+        stmt.executeUpdate();
+
+        return idContato;
     }
 
     @Override

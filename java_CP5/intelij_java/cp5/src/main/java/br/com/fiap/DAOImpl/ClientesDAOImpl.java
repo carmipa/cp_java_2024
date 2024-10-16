@@ -1,6 +1,8 @@
 package br.com.fiap.DAOImpl;
 
 import br.com.fiap.dao.ClientesDAO;
+import br.com.fiap.dao.ContatosDAO;
+import br.com.fiap.dao.EnderecosDAO;
 import br.com.fiap.factory.ConnectionFactory;
 import br.com.fiap.model.Clientes;
 
@@ -14,22 +16,49 @@ import java.util.List;
 public class ClientesDAOImpl implements ClientesDAO {
 
     @Override
-    public void create(Clientes cliente) {
-        String sql = "INSERT INTO clientes (tipo_cliente, nome, tipo_documento, numero_documento, data_nascimento) VALUES (?, ?, ?, ?, ?)";
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
+    public void create(Clientes cliente, Connection connection) throws SQLException {
+        try {
+            connection.setAutoCommit(false);
 
-            stmt.setString(1, cliente.getTipoCliente());
-            stmt.setString(2, cliente.getNome());
-            stmt.setString(3, cliente.getTipoDocumento());
-            stmt.setString(4, cliente.getNumeroDocumento());
-            stmt.setString(5, cliente.getDataNacimento());
+            EnderecosDAO enderecosDAO = new EnderecosDAOImpl();
+            ContatosDAO contatosDAO = new ContatosDAOImpl();
 
-            stmt.executeUpdate();
+            int idEndereco = enderecosDAO.create(cliente.getEnderecos(), connection);
+            int idContato = contatosDAO.create(cliente.getContatos(), connection);
+
+            String seqSql = "SELECT seq_clientes.NEXTVAL FROM dual";
+            PreparedStatement seqStmt = connection.prepareStatement(seqSql);
+            ResultSet rsSeq = seqStmt.executeQuery();
+            int idCliente = 0;
+            if (rsSeq.next()) {
+                idCliente = rsSeq.getInt(1);
+            } else {
+                throw new SQLException("Falha ao obter próximo valor da sequência seq_clientes.");
+            }
+
+            String sqlCliente = "INSERT INTO clientes (id_cli, tipo_cliente, nome, tipo_documento, numero_documento, data_nascimento, enderecos_id_endereco, contatos_id_contato) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement stmtCliente = connection.prepareStatement(sqlCliente);
+
+            stmtCliente.setInt(1, idCliente);
+            stmtCliente.setString(2, cliente.getTipoCliente());
+            stmtCliente.setString(3, cliente.getNome());
+            stmtCliente.setString(4, cliente.getTipoDocumento());
+            stmtCliente.setString(5, cliente.getNumeroDocumento());
+            stmtCliente.setString(6, cliente.getDataNacimento());
+            stmtCliente.setInt(7, idEndereco);
+            stmtCliente.setInt(8, idContato);
+
+            stmtCliente.executeUpdate();
+
+            connection.commit();
+
         } catch (SQLException e) {
             e.printStackTrace();
+            connection.rollback();
+            throw e;
         }
     }
+
 
     @Override
     public Clientes readById(int id) {

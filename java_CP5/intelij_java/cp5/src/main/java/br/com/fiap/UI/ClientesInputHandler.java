@@ -8,6 +8,7 @@ import br.com.fiap.service.ClientesService;
 import br.com.fiap.ExternalInterface.Cep;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,12 +23,11 @@ public class ClientesInputHandler {
     public void cadastrarNovoCliente(Scanner scanner) {
         try {
             Clientes cliente = coletarDadosCliente(scanner);
-            if (cliente != null) {
-                clientesService.cadastrarClientes(cliente);
-                System.out.println("\033[32m\033[1mCliente cadastrado com sucesso!\033[0m");
-            }
-        } catch (IllegalArgumentException e) {
-            System.err.println("\033[31mErro ao cadastrar cliente: " + e.getMessage() + "\033[0m");
+            clientesService.cadastrarClientes(cliente);
+            System.out.println("Cliente cadastrado com sucesso!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println("Erro ao cadastrar cliente: " + e.getMessage());
         }
     }
 
@@ -116,7 +116,7 @@ public class ClientesInputHandler {
                         Enderecos enderecoViaCep = Cep.buscarEnderecoPorCep(cep);
                         if (enderecoViaCep != null) {
                             endereco.setCep(cep);
-                            endereco.setLogadouro(enderecoViaCep.getLogradouro());
+                            endereco.setLogradouro(enderecoViaCep.getLogradouro());
                             endereco.setBairro(enderecoViaCep.getBairro());
                             endereco.setCidade(enderecoViaCep.getCidade());
                             endereco.setEstado(enderecoViaCep.getEstado());
@@ -131,7 +131,7 @@ public class ClientesInputHandler {
                             System.err.println("CEP não encontrado. Preencha os dados manualmente.");
                             System.out.println();
                             System.out.print("Logradouro.....................: ");
-                            endereco.setLogadouro(scanner.nextLine().trim());
+                            endereco.setLogradouro(scanner.nextLine().trim());
                             System.out.print("Bairro.........................: ");
                             endereco.setBairro(scanner.nextLine().trim());
                             System.out.print("Cidade.........................: ");
@@ -290,7 +290,7 @@ public class ClientesInputHandler {
 
     private void preencherEnderecoManual(Scanner scanner, Enderecos endereco) {
         System.out.print("Logradouro.....................: ");
-        endereco.setLogadouro(scanner.nextLine().trim());
+        endereco.setLogradouro(scanner.nextLine().trim());
         System.out.print("Bairro.........................: ");
         endereco.setBairro(scanner.nextLine().trim());
         System.out.print("Cidade.........................: ");

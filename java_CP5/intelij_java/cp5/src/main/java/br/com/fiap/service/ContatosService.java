@@ -4,6 +4,8 @@ import br.com.fiap.dao.ContatosDAO;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Contatos;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ContatosService {
@@ -14,8 +16,12 @@ public class ContatosService {
         this.contatosDAO = DAOFactory.getContatoDAO(); // Injeção do DAO via Factory
     }
 
-    public void cadastrarContatos(Contatos contatos) {
-        contatosDAO.create(contatos);
+    public ContatosService(ContatosDAO contatosDAO) {
+        this.contatosDAO = contatosDAO;
+    }
+
+    public int cadastrarContatos(Contatos contato, Connection connection) throws SQLException {
+        return contatosDAO.create(contato, connection);
     }
 
     public Contatos buscarContatosPorId(int id) {

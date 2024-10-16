@@ -47,20 +47,20 @@ public class Enderecos {
         this.numero = numero;
     }
 
-    public String getLogradouro() {
-        return logradouro;
-    }
-
-    public void setLogadouro(String logadouro) {
-        this.logradouro = logadouro;
-    }
-
     public String getCep() {
         return cep;
     }
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getBairro() {
@@ -92,9 +92,6 @@ public class Enderecos {
     }
 
     public void setComplemento(String complemento) {
-        if (complemento == null || complemento.trim().isEmpty()) {
-            throw new IllegalArgumentException("O complemento não pode ser vazio.");
-        }
         this.complemento = complemento;
     }
 
@@ -123,6 +120,4 @@ public class Enderecos {
                 ", complemento='" + complemento + '\'' +
                 '}';
     }
-
-
 }
