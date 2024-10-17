@@ -8,10 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/ClientesInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/SegurosInputHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/main/Teste.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +43,13 @@
   "keyToString": {
     "Application.Teste.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Paulo",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
+
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+
   <component name="RunManager">
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fiap.main.Teste" />
@@ -92,8 +85,7 @@
       <created>1729159358219</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1729159358219</updated>
-      <workItem from="1729159360001" duration="3639000" />
+
     </task>
     <servers />
   </component>
