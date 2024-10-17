@@ -11,28 +11,36 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class EnderecosDAOImpl implements EnderecosDAO {
 
     @Override
-    public void create(Enderecos enderecos) {
-
-        String sql = "INSERT INTO enderecos(numero, cep, logradouro, bairro, cidade, estado, complemento) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
-
-            stmt.setInt(1, enderecos.getNumero());
-            stmt.setString(2, enderecos.getCep());
-            stmt.setString(3, enderecos.getLogadouro());
-            stmt.setString(4, enderecos.getBairro());
-            stmt.setString(5, enderecos.getCidade());
-            stmt.setString(6, enderecos.getEstado());
-            stmt.setString(7, enderecos.getComplemento());
-
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+    public int create(Enderecos endereco, Connection connection) throws SQLException {
+        String seqSql = "SELECT seq_enderecos.NEXTVAL FROM dual";
+        PreparedStatement seqStmt = connection.prepareStatement(seqSql);
+        ResultSet rsSeq = seqStmt.executeQuery();
+        int idEndereco = 0;
+        if (rsSeq.next()) {
+            idEndereco = rsSeq.getInt(1);
+        } else {
+            throw new SQLException("Falha ao obter próximo valor da sequência seq_enderecos.");
         }
 
+        String sql = "INSERT INTO enderecos (id_endereco, logradouro, numero, complemento, bairro, cidade, estado, cep) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement stmt = connection.prepareStatement(sql);
+
+        stmt.setInt(1, idEndereco);
+        stmt.setString(2, endereco.getLogradouro());
+        stmt.setInt(3, endereco.getNumero());
+        stmt.setString(4, endereco.getComplemento());
+        stmt.setString(5, endereco.getBairro());
+        stmt.setString(6, endereco.getCidade());
+        stmt.setString(7, endereco.getEstado());
+        stmt.setString(8, endereco.getCep());
+
+        stmt.executeUpdate();
+
+        return idEndereco;
     }
 
     @Override
@@ -101,7 +109,7 @@ public class EnderecosDAOImpl implements EnderecosDAO {
 
             stmt.setInt(1, enderecos.getNumero());
             stmt.setString(2, enderecos.getCep());
-            stmt.setString(3, enderecos.getLogadouro());
+            stmt.setString(3, enderecos.getLogradouro());
             stmt.setString(4, enderecos.getBairro());
             stmt.setString(5, enderecos.getCidade());
             stmt.setString(6, enderecos.getEstado());

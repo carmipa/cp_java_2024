@@ -14,11 +14,10 @@ import java.util.List;
 public class PagamentosDAOImpl implements PagamentosDAO {
 
     @Override
-    public void create(Pagamentos pagamentos) {
+    public void create(Pagamentos pagamentos, Connection connection) {
 
-        String sql = "INSERT INTO pagamentos (data_pagamento, tipo_pagammento, forma_pagamento, parcelas, valor_parcela, desconto, valor_tottal) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        try (Connection connection = ConnectionFactory.getConnection();
-             PreparedStatement stmt = connection.prepareStatement(sql)) {
+        String sql = "INSERT INTO pagamentos (data_pagamento, tipo_pagamento, forma_pagamento, parcelas, valor_parcela, desconto, valor_total) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
 
             stmt.setString(1, pagamentos.getDataPagamento());
             stmt.setString(2, pagamentos.getTipoPagamento());
@@ -32,7 +31,6 @@ public class PagamentosDAOImpl implements PagamentosDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 
     @Override

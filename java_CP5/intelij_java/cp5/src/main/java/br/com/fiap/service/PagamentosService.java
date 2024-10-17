@@ -1,9 +1,12 @@
 package br.com.fiap.service;
 
 import br.com.fiap.dao.PagamentosDAO;
+import br.com.fiap.factory.ConnectionFactory;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Pagamentos;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class PagamentosService {
@@ -14,8 +17,10 @@ public class PagamentosService {
         this.pagamentosDAO = DAOFactory.getPagamentoDAO();
     }
 
-    public void cadastrarPagamentos(Pagamentos pagamentos) {
-        pagamentosDAO.create(pagamentos);
+    public void cadastrarPagamentos(Pagamentos pagamentos) throws SQLException {
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            pagamentosDAO.create(pagamentos, connection);
+        }
     }
 
     public Pagamentos buscarPagamentosPorId(int id) {

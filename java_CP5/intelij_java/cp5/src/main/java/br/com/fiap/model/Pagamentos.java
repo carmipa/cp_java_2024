@@ -1,8 +1,11 @@
 package br.com.fiap.model;
 
+import br.com.fiap.InterfaceModel.IPagamentos;
+
+import java.time.LocalDate;
 import java.util.Objects;
 
-public class Pagamentos {
+public class Pagamentos implements IPagamentos {
 
     private int idPagemnto;
     private String dataPagamento;
@@ -134,5 +137,11 @@ public class Pagamentos {
                 ", desconto=" + desconto +
                 ", valorTotal=" + valorTotal +
                 '}';
+    }
+
+    @Override
+    public String definirDataPagamentoAtual() {
+        this.dataPagamento = LocalDate.now().toString();
+        return this.dataPagamento;
     }
 }

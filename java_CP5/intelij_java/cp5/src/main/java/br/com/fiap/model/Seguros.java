@@ -77,4 +77,6 @@ public class Seguros {
                 ", valor=" + valor +
                 '}';
     }
+
+    
 }

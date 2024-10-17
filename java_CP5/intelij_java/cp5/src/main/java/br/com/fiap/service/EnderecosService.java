@@ -4,6 +4,8 @@ import br.com.fiap.dao.EnderecosDAO;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Enderecos;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class EnderecosService {
@@ -14,8 +16,9 @@ public class EnderecosService {
         this.enderecosDAO = DAOFactory.getEnderecoDAO();
     }
 
-    public void cadastrarEnderecos(Enderecos enderecos) {
-        enderecosDAO.create(enderecos);
+    public int cadastrarEnderecos(Enderecos enderecos, Connection connection) throws SQLException {
+        return enderecosDAO.create(enderecos, connection);
+
     }
 
     public Enderecos buscarEnderecosPorId(int id) {

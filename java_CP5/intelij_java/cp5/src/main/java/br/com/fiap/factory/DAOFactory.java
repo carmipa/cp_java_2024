@@ -5,6 +5,8 @@ import br.com.fiap.dao.*;
 
 public class DAOFactory {
 
+
+
     public static ClientesDAO getClienteDAO() {
         return new ClientesDAOImpl(); // Corrigido para retornar a implementação concreta
     }

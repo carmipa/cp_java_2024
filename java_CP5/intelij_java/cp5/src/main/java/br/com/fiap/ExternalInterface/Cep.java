@@ -38,7 +38,7 @@ public class Cep {
         Enderecos enderecos = gson.fromJson(responseBody, Enderecos.class);
 
         // Verifica se o CEP retornou erro
-        if (enderecos.getLogadouro() == null) {
+        if (enderecos.getLogradouro() == null) {
             System.out.println("CEP não encontrado.");
             return null;
         }

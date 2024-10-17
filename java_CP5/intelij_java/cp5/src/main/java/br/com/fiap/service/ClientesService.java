@@ -1,13 +1,17 @@
 package br.com.fiap.service;
 
 import br.com.fiap.dao.ClientesDAO;
+import br.com.fiap.factory.ConnectionFactory;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Clientes;
-import br.com.fiap.util.DocumentoUtil;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class ClientesService {
+
+
 
     private ClientesDAO clientesDAO;
 
@@ -15,21 +19,10 @@ public class ClientesService {
         this.clientesDAO = DAOFactory.getClienteDAO(); // Injeção do DAO via Factory
     }
 
-    public void cadastrarClientes(Clientes clientes) {
-
-        // Validação do documento antes de cadastrar
-        if (clientes.getTipoDocumento().equalsIgnoreCase("CPF")) {
-            if (!DocumentoUtil.isCPF(clientes.getNumeroDocumento())) {
-                throw new IllegalArgumentException("CPF inválido.");
-            }
-        } else if (clientes.getTipoDocumento().equalsIgnoreCase("CNPJ")) {
-            if (!DocumentoUtil.isCNPJ(clientes.getNumeroDocumento())) {
-                throw new IllegalArgumentException("CNPJ inválido.");
-            }
+    public void cadastrarClientes(Clientes cliente) throws SQLException {
+        try (Connection connection = ConnectionFactory.getConnection()) {
+            clientesDAO.create(cliente, connection);
         }
-
-        // Caso o documento seja válido, cadastra o cliente
-        clientesDAO.create(clientes);
     }
 
     public Clientes buscarClientesPorId(int id) {
@@ -47,4 +40,7 @@ public class ClientesService {
     public void deletarClientes(int id) {
         clientesDAO.delete(id);
     }
+
+
+
 }
