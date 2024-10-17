@@ -22,7 +22,7 @@ public class SegurosInputHandler {
         } catch (IllegalArgumentException e) {
             System.err.println("\033[31mErro ao cadastrar seguro: " + e.getMessage() + "\033[0m");
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            System.err.println("\033[31mErro ao cadastrar seguro no banco de dados: " + e.getMessage() + "\033[0m");
         }
     }
 
@@ -107,17 +107,23 @@ public class SegurosInputHandler {
                     System.err.println("ID não pode ser vazio.");
                 }
             }
+        } catch (SQLException e) {
+            System.err.println("\033[31mErro ao atualizar seguro no banco de dados: " + e.getMessage() + "\033[0m");
         } catch (IllegalArgumentException e) {
             System.err.println("\033[31mErro ao atualizar seguro: " + e.getMessage() + "\033[0m");
         }
     }
 
     public void listarSeguros() {
-        System.out.println("\033[34m\033[1m===== LISTA DE SEGUROS =====\033[0m");
-        segurosService.listarTodosSeguros().forEach(seguros -> {
-            exibirDadosSeguro(seguros);
-            System.out.println("-----------------------------------");
-        });
+        try {
+            System.out.println("\033[34m\033[1m===== LISTA DE SEGUROS =====\033[0m");
+            segurosService.listarTodosSeguros().forEach(seguros -> {
+                exibirDadosSeguro(seguros);
+                System.out.println("-----------------------------------");
+            });
+        } catch (SQLException e) {
+            System.err.println("\033[31mErro ao listar seguros: " + e.getMessage() + "\033[0m");
+        }
     }
 
     public void buscarSeguroPorId(Scanner scanner) {
@@ -142,7 +148,7 @@ public class SegurosInputHandler {
                     System.err.println("ID não pode ser vazio.");
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("\033[31mErro ao buscar seguro: " + e.getMessage() + "\033[0m");
         }
     }
@@ -165,7 +171,7 @@ public class SegurosInputHandler {
                     System.err.println("ID não pode ser vazio.");
                 }
             }
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.err.println("\033[31mErro ao deletar seguro: " + e.getMessage() + "\033[0m");
         }
     }
