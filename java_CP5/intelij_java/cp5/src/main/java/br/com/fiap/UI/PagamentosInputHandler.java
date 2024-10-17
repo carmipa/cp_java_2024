@@ -3,7 +3,7 @@ package br.com.fiap.UI;
 import br.com.fiap.model.Pagamentos;
 import br.com.fiap.service.PagamentosService;
 
-import java.util.InputMismatchException;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class PagamentosInputHandler {
@@ -21,6 +21,8 @@ public class PagamentosInputHandler {
             System.out.println("\033[32m\033[1mPagamento cadastrado com sucesso!\033[0m");
         } catch (IllegalArgumentException e) {
             System.err.println("\033[31mErro ao cadastrar pagamento: " + e.getMessage() + "\033[0m");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -30,60 +32,145 @@ public class PagamentosInputHandler {
         System.out.println("\033[34m\033[1m===== 1 - CADASTRO DE PAGAMENTO =====\033[0m");
         System.out.println("\nData de Pagamento: \033[32m" + pagamentos.getDataPagamento() + "\033[0m");
 
-        try {
+        // Tipo de Pagamento
+        while (true) {
             System.out.print("Tipo de Pagamento (Dinheiro, Cartão, Pix): ");
-            pagamentos.setTipoPagamento(scanner.nextLine());
-
-            System.out.print("Forma de Pagamento (à vista, parcelado): ");
-            pagamentos.setFormaPagamento(scanner.nextLine());
-
-            System.out.print("Quantidade de Parcelas: ");
-            int parcelas = scanner.nextInt();
-            if (parcelas < 0) throw new IllegalArgumentException("A quantidade de parcelas não pode ser negativa.");
-            pagamentos.setParcelas(parcelas);
-
-            System.out.print("Valor da Parcela R$: ");
-            double valorParcela = scanner.nextDouble();
-            if (valorParcela < 0) throw new IllegalArgumentException("O valor da parcela não pode ser negativo.");
-            pagamentos.setValorParcela(valorParcela);
-
-            System.out.print("Desconto %: ");
-            double desconto = scanner.nextDouble();
-            if (desconto < 0) throw new IllegalArgumentException("O desconto não pode ser negativo.");
-            pagamentos.setDesconto(desconto);
-
-            System.out.print("Valor Total R$: ");
-            double valorTotal = scanner.nextDouble();
-            if (valorTotal < 0) throw new IllegalArgumentException("O valor total não pode ser negativo.");
-            pagamentos.setValorTotal(valorTotal);
-
-        } catch (InputMismatchException e) {
-            System.err.println("\033[31mErro: Entrada inválida. Por favor, insira os valores corretamente.\033[0m");
-            scanner.nextLine(); // Limpa o buffer do scanner
-            throw new IllegalArgumentException("Erro durante a coleta de dados do pagamento.");
+            String tipoPagamento = scanner.nextLine().trim();
+            if (!tipoPagamento.isEmpty() && (tipoPagamento.equalsIgnoreCase("Dinheiro") ||
+                    tipoPagamento.equalsIgnoreCase("Cartão") || tipoPagamento.equalsIgnoreCase("Pix"))) {
+                pagamentos.setTipoPagamento(tipoPagamento);
+                break;
+            } else {
+                System.err.println("Tipo de Pagamento inválido! Escolha entre 'Dinheiro', 'Cartão' ou 'Pix'.");
+            }
         }
-        scanner.nextLine(); // Limpa o buffer do scanner
+
+        // Forma de Pagamento
+        while (true) {
+            System.out.print("Forma de Pagamento (à vista, parcelado): ");
+            String formaPagamento = scanner.nextLine().trim();
+            if (!formaPagamento.isEmpty() && (formaPagamento.equalsIgnoreCase("à vista") ||
+                    formaPagamento.equalsIgnoreCase("parcelado"))) {
+                pagamentos.setFormaPagamento(formaPagamento);
+                break;
+            } else {
+                System.err.println("Forma de Pagamento inválida! Escolha entre 'à vista' ou 'parcelado'.");
+            }
+        }
+
+        // Quantidade de Parcelas
+        while (true) {
+            System.out.print("Quantidade de Parcelas: ");
+            String parcelasStr = scanner.nextLine().trim();
+            if (!parcelasStr.isEmpty()) {
+                if (parcelasStr.matches("\\d+")) {
+                    int parcelas = Integer.parseInt(parcelasStr);
+                    if (parcelas > 0) {
+                        pagamentos.setParcelas(parcelas);
+                        break;
+                    } else {
+                        System.err.println("A quantidade de parcelas deve ser maior que zero.");
+                    }
+                } else {
+                    System.err.println("Quantidade de Parcelas inválida! Deve ser um número inteiro positivo.");
+                }
+            } else {
+                System.err.println("Quantidade de Parcelas não pode ser vazia.");
+            }
+        }
+
+        // Valor da Parcela
+        while (true) {
+            System.out.print("Valor da Parcela R$: ");
+            String valorParcelaStr = scanner.nextLine().trim();
+            if (!valorParcelaStr.isEmpty()) {
+                try {
+                    double valorParcela = Double.parseDouble(valorParcelaStr.replace(',', '.'));
+                    if (valorParcela >= 0) {
+                        pagamentos.setValorParcela(valorParcela);
+                        break;
+                    } else {
+                        System.err.println("O valor da parcela não pode ser negativo.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Valor da Parcela inválido! Deve ser um número.");
+                }
+            } else {
+                System.err.println("Valor da Parcela não pode ser vazio.");
+            }
+        }
+
+        // Desconto
+        while (true) {
+            System.out.print("Desconto %: ");
+            String descontoStr = scanner.nextLine().trim();
+            if (!descontoStr.isEmpty()) {
+                try {
+                    double desconto = Double.parseDouble(descontoStr.replace(',', '.'));
+                    if (desconto >= 0) {
+                        pagamentos.setDesconto(desconto);
+                        break;
+                    } else {
+                        System.err.println("O desconto não pode ser negativo.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Desconto inválido! Deve ser um número.");
+                }
+            } else {
+                System.err.println("Desconto não pode ser vazio.");
+            }
+        }
+
+        // Valor Total
+        while (true) {
+            System.out.print("Valor Total R$: ");
+            String valorTotalStr = scanner.nextLine().trim();
+            if (!valorTotalStr.isEmpty()) {
+                try {
+                    double valorTotal = Double.parseDouble(valorTotalStr.replace(',', '.'));
+                    if (valorTotal >= 0) {
+                        pagamentos.setValorTotal(valorTotal);
+                        break;
+                    } else {
+                        System.err.println("O valor total não pode ser negativo.");
+                    }
+                } catch (NumberFormatException e) {
+                    System.err.println("Valor Total inválido! Deve ser um número.");
+                }
+            } else {
+                System.err.println("Valor Total não pode ser vazio.");
+            }
+        }
 
         return pagamentos;
     }
 
     public void atualizarPagamento(Scanner scanner) {
         try {
-            System.out.print("Digite o ID do pagamento que deseja atualizar: ");
-            int id = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer do scanner
+            while (true) {
+                System.out.print("Digite o ID do pagamento que deseja atualizar: ");
+                String idStr = scanner.nextLine().trim();
+                if (!idStr.isEmpty()) {
+                    if (idStr.matches("\\d+")) {
+                        int id = Integer.parseInt(idStr);
+                        Pagamentos pagamentoExistente = pagamentosService.buscarPagamentosPorId(id);
 
-            Pagamentos pagamentoExistente = pagamentosService.buscarPagamentosPorId(id);
-
-            if (pagamentoExistente != null) {
-                Pagamentos pagamentoAtualizado = coletarDadosPagamento(scanner);
-                pagamentoAtualizado.setIdPagemnto(id); // Mantém o mesmo ID
-                pagamentosService.atualizarPagamentos(pagamentoAtualizado);
-                System.out.println("\033[32m\033[1mPagamento atualizado com sucesso!\033[0m");
-            } else {
-                System.out.println("\033[31mPagamento com ID " + id + " não encontrado.\033[0m");
+                        if (pagamentoExistente != null) {
+                            Pagamentos pagamentoAtualizado = coletarDadosPagamento(scanner);
+                            pagamentoAtualizado.setIdPagemnto(id); // Mantém o mesmo ID
+                            pagamentosService.atualizarPagamentos(pagamentoAtualizado);
+                            System.out.println("\033[32m\033[1mPagamento atualizado com sucesso!\033[0m");
+                        } else {
+                            System.err.println("Pagamento com ID " + id + " não encontrado.");
+                        }
+                        break;
+                    } else {
+                        System.err.println("ID inválido! Deve ser um número inteiro.");
+                    }
+                } else {
+                    System.err.println("ID não pode ser vazio.");
+                }
             }
-
         } catch (IllegalArgumentException e) {
             System.err.println("\033[31mErro ao atualizar pagamento: " + e.getMessage() + "\033[0m");
         }
@@ -99,19 +186,28 @@ public class PagamentosInputHandler {
 
     public void buscarPagamentoPorId(Scanner scanner) {
         try {
-            System.out.print("Digite o ID do pagamento: ");
-            int id = scanner.nextInt();
-            scanner.nextLine(); // Limpa o buffer do scanner
-
-            Pagamentos pagamento = pagamentosService.buscarPagamentosPorId(id);
-            if (pagamento != null) {
-                exibirDadosPagamento(pagamento);
-            } else {
-                System.out.println("\033[31mPagamento com ID " + id + " não encontrado.\033[0m");
+            while (true) {
+                System.out.print("Digite o ID do pagamento: ");
+                String idStr = scanner.nextLine().trim();
+                if (!idStr.isEmpty()) {
+                    if (idStr.matches("\\d+")) {
+                        int id = Integer.parseInt(idStr);
+                        Pagamentos pagamento = pagamentosService.buscarPagamentosPorId(id);
+                        if (pagamento != null) {
+                            exibirDadosPagamento(pagamento);
+                        } else {
+                            System.err.println("Pagamento com ID " + id + " não encontrado.");
+                        }
+                        break;
+                    } else {
+                        System.err.println("ID inválido! Deve ser um número inteiro.");
+                    }
+                } else {
+                    System.err.println("ID não pode ser vazio.");
+                }
             }
-        } catch (InputMismatchException e) {
-            System.err.println("\033[31mErro: Entrada inválida. Por favor, insira os valores corretamente.\033[0m");
-            scanner.nextLine(); // Limpa o buffer do scanner
+        } catch (Exception e) {
+            System.err.println("\033[31mErro ao buscar pagamento: " + e.getMessage() + "\033[0m");
         }
     }
 
@@ -129,13 +225,24 @@ public class PagamentosInputHandler {
 
     public void deletarPagamento(Scanner scanner) {
         try {
-            System.out.print("Digite o ID do pagamento que deseja deletar: ");
-            int idPagamento = scanner.nextInt();
-            pagamentosService.deletarPagamentos(idPagamento);
-            System.out.println("\033[32m\033[1mPagamento deletado com sucesso!\033[0m");
-        } catch (InputMismatchException e) {
-            System.err.println("\033[31mErro: Entrada inválida. Por favor, insira os valores corretamente.\033[0m");
-            scanner.nextLine(); // Limpa o buffer do scanner
+            while (true) {
+                System.out.print("Digite o ID do pagamento que deseja deletar: ");
+                String idStr = scanner.nextLine().trim();
+                if (!idStr.isEmpty()) {
+                    if (idStr.matches("\\d+")) {
+                        int idPagamento = Integer.parseInt(idStr);
+                        pagamentosService.deletarPagamentos(idPagamento);
+                        System.out.println("\033[32m\033[1mPagamento deletado com sucesso!\033[0m");
+                        break;
+                    } else {
+                        System.err.println("ID inválido! Deve ser um número inteiro.");
+                    }
+                } else {
+                    System.err.println("ID não pode ser vazio.");
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("\033[31mErro ao deletar pagamento: " + e.getMessage() + "\033[0m");
         }
     }
 

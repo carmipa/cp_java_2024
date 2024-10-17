@@ -4,7 +4,6 @@ import br.com.fiap.dao.ClientesDAO;
 import br.com.fiap.factory.ConnectionFactory;
 import br.com.fiap.factory.DAOFactory;
 import br.com.fiap.model.Clientes;
-import br.com.fiap.util.DocumentoUtil;
 
 import java.sql.Connection;
 import java.sql.SQLException;
