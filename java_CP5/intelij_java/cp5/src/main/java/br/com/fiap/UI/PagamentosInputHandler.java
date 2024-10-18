@@ -80,9 +80,26 @@ public class PagamentosInputHandler {
             switch (opcaoFormaPagamento) {
                 case "1":
                     pagamentos.setFormaPagamento("À vista");
+                    pagamentos.setParcelas(1); // Se for à vista, define automaticamente 1 parcela
                     break;
                 case "2":
                     pagamentos.setFormaPagamento("Parcelado");
+                    // Quantidade de Parcelas
+                    while (true) {
+                        System.out.print("Quantidade de Parcelas: ");
+                        String parcelasStr = scanner.nextLine().trim();
+                        if (!parcelasStr.isEmpty() && parcelasStr.matches("\\d+")) {
+                            int parcelas = Integer.parseInt(parcelasStr);
+                            if (parcelas > 0) {
+                                pagamentos.setParcelas(parcelas);
+                                break;
+                            } else {
+                                System.err.println(RED + "A quantidade de parcelas deve ser maior que zero." + RESET);
+                            }
+                        } else {
+                            System.err.println(RED + "Quantidade de Parcelas inválida! Deve ser um número inteiro positivo." + RESET);
+                        }
+                    }
                     break;
                 default:
                     System.err.println(RED + "Opção inválida! Escolha entre 1 ou 2." + RESET);
@@ -91,75 +108,36 @@ public class PagamentosInputHandler {
             break;
         }
 
-        // Quantidade de Parcelas
-        if (pagamentos.getFormaPagamento().equalsIgnoreCase("Parcelado")) {
-            while (true) {
-                System.out.print("Quantidade de Parcelas: ");
-                String parcelasStr = scanner.nextLine().trim();
-                if (!parcelasStr.isEmpty() && parcelasStr.matches("\\d+")) {
-                    int parcelas = Integer.parseInt(parcelasStr);
-                    if (parcelas > 0) {
-                        pagamentos.setParcelas(parcelas);
-                        break;
-                    } else {
-                        System.err.println(RED + "A quantidade de parcelas deve ser maior que zero." + RESET);
-                    }
-                } else {
-                    System.err.println(RED + "Quantidade de Parcelas inválida! Deve ser um número inteiro positivo." + RESET);
-                }
-            }
-        } else {
-            pagamentos.setParcelas(1); // Se for à vista, define automaticamente 1 parcela
-        }
-
-        // Valor da Parcela
+        // Valor do Serviço (usado apenas para cálculo)
         while (true) {
-            System.out.print("Valor da Parcela R$: ");
-            String valorParcelaStr = scanner.nextLine().trim();
-            if (!valorParcelaStr.isEmpty()) {
+            System.out.print("Valor do Serviço R$: ");
+            String valorServicoStr = scanner.nextLine().trim();
+            if (!valorServicoStr.isEmpty()) {
                 try {
-                    double valorParcela = Double.parseDouble(valorParcelaStr.replace(',', '.'));
-                    if (valorParcela >= 0) {
-                        pagamentos.setValorParcela(valorParcela);
+                    double valorServico = Double.parseDouble(valorServicoStr.replace(',', '.'));
+                    if (valorServico >= 0) {
+                        pagamentos.setValorServico(valorServico);
                         break;
                     } else {
-                        System.err.println(RED + "O valor da parcela não pode ser negativo." + RESET);
+                        System.err.println(RED + "O valor do serviço não pode ser negativo." + RESET);
                     }
                 } catch (NumberFormatException e) {
-                    System.err.println(RED + "Valor da Parcela inválido! Deve ser um número." + RESET);
+                    System.err.println(RED + "Valor do Serviço inválido! Deve ser um número." + RESET);
                 }
             } else {
-                System.err.println(RED + "Valor da Parcela não pode ser vazio." + RESET);
+                System.err.println(RED + "Valor do Serviço não pode ser vazio." + RESET);
             }
         }
 
         // Desconto calculado automaticamente
         double desconto = calcularDesconto(pagamentos.getTipoPagamento());
         pagamentos.setDesconto(desconto);
-        System.out.println(YELLOW + "Desconto aplicado: " + df.format(desconto) + "%" + RESET);
+        System.out.println(YELLOW + "Desconto aplicado: " + desconto + "%" + RESET);
 
-        // Valor Total (com desconto aplicado)
-        while (true) {
-            System.out.print("Valor Total R$: ");
-            String valorTotalStr = scanner.nextLine().trim();
-            if (!valorTotalStr.isEmpty()) {
-                try {
-                    double valorTotal = Double.parseDouble(valorTotalStr.replace(',', '.'));
-                    if (valorTotal >= 0) {
-                        valorTotal = valorTotal - (valorTotal * (desconto / 100)); // Aplica o desconto
-                        pagamentos.setValorTotal(valorTotal);
-                        System.out.println(GREEN + "Valor total com desconto: R$ " + df.format(valorTotal) + RESET);
-                        break;
-                    } else {
-                        System.err.println(RED + "O valor total não pode ser negativo." + RESET);
-                    }
-                } catch (NumberFormatException e) {
-                    System.err.println(RED + "Valor Total inválido! Deve ser um número." + RESET);
-                }
-            } else {
-                System.err.println(RED + "Valor Total não pode ser vazio." + RESET);
-            }
-        }
+        // Calcula o valor total e as parcelas com base no valor do serviço e desconto
+        pagamentos.calcularValorTotalEParcelas();
+        System.out.println(GREEN + "Valor total com desconto: R$ " + df.format(pagamentos.getValorTotal()) + RESET);
+        System.out.println(GREEN + "Valor de cada parcela: R$ " + df.format(pagamentos.getValorParcela()) + RESET);
 
         return pagamentos;
     }
@@ -176,6 +154,8 @@ public class PagamentosInputHandler {
                 return 0.0;
         }
     }
+
+
 
     public void atualizarPagamento(Scanner scanner) {
         try {

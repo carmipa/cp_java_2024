@@ -2,5 +2,7 @@ package br.com.fiap.InterfaceModel;
 
 public interface IPagamentos {
 
-    String definirDataPagamentoAtual();
+    public String definirDataPagamentoAtual();
+
+    public void calcularValorTotalEParcelas();
 }

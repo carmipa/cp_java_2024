@@ -11,10 +11,11 @@ public class Pagamentos implements IPagamentos {
     private String dataPagamento;
     private String tipoPagamento;
     private String formaPagamento;
-    private int parcelas;
-    private double valorParcela;
+    private double valorServico;
     private double desconto;
     private double valorTotal;
+    private int parcelas;
+    private double valorParcela;
     private Clientes clientes;
     private Seguros seguros;
 
@@ -22,15 +23,16 @@ public class Pagamentos implements IPagamentos {
         super();
     }
 
-    public Pagamentos(int idPagemnto, String dataPagamento, String tipoPagamento, String formaPagamento, int parcelas, double valorParcela, double desconto, double valorTotal) {
+    public Pagamentos(int idPagemnto, String dataPagamento, String tipoPagamento, String formaPagamento, double valorServico, double desconto, double valorTotal, int parcelas, double valorParcela) {
         this.idPagemnto = idPagemnto;
         this.dataPagamento = dataPagamento;
         this.tipoPagamento = tipoPagamento;
         this.formaPagamento = formaPagamento;
-        this.parcelas = parcelas;
-        this.valorParcela = valorParcela;
+        this.valorServico = valorServico;
         this.desconto = desconto;
         this.valorTotal = valorTotal;
+        this.parcelas = parcelas;
+        this.valorParcela = valorParcela;
     }
 
     public int getIdPagemnto() {
@@ -81,6 +83,14 @@ public class Pagamentos implements IPagamentos {
         this.valorParcela = valorParcela;
     }
 
+    public double getValorServico() {
+        return valorServico;
+    }
+
+    public void setValorServico(double valorServico) {
+        this.valorServico = valorServico;
+    }
+
     public double getDesconto() {
         return desconto;
     }
@@ -117,12 +127,12 @@ public class Pagamentos implements IPagamentos {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Pagamentos that)) return false;
-        return idPagemnto == that.idPagemnto && parcelas == that.parcelas && Double.compare(valorParcela, that.valorParcela) == 0 && Double.compare(desconto, that.desconto) == 0 && Double.compare(valorTotal, that.valorTotal) == 0 && Objects.equals(dataPagamento, that.dataPagamento) && Objects.equals(tipoPagamento, that.tipoPagamento) && Objects.equals(formaPagamento, that.formaPagamento) && Objects.equals(clientes, that.clientes) && Objects.equals(seguros, that.seguros);
+        return idPagemnto == that.idPagemnto && Double.compare(valorServico, that.valorServico) == 0 && Double.compare(desconto, that.desconto) == 0 && Double.compare(valorTotal, that.valorTotal) == 0 && parcelas == that.parcelas && Double.compare(valorParcela, that.valorParcela) == 0 && Objects.equals(dataPagamento, that.dataPagamento) && Objects.equals(tipoPagamento, that.tipoPagamento) && Objects.equals(formaPagamento, that.formaPagamento) && Objects.equals(clientes, that.clientes) && Objects.equals(seguros, that.seguros);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idPagemnto, dataPagamento, tipoPagamento, formaPagamento, parcelas, valorParcela, desconto, valorTotal, clientes, seguros);
+        return Objects.hash(idPagemnto, dataPagamento, tipoPagamento, formaPagamento, valorServico, desconto, valorTotal, parcelas, valorParcela, clientes, seguros);
     }
 
     @Override
@@ -132,10 +142,11 @@ public class Pagamentos implements IPagamentos {
                 ", dataPagamento='" + dataPagamento + '\'' +
                 ", tipoPagamento='" + tipoPagamento + '\'' +
                 ", formaPagamento='" + formaPagamento + '\'' +
-                ", parcelas=" + parcelas +
-                ", valorParcela=" + valorParcela +
+                ", valorServico=" + valorServico +
                 ", desconto=" + desconto +
                 ", valorTotal=" + valorTotal +
+                ", parcelas=" + parcelas +
+                ", valorParcela=" + valorParcela +
                 '}';
     }
 
@@ -143,5 +154,21 @@ public class Pagamentos implements IPagamentos {
     public String definirDataPagamentoAtual() {
         this.dataPagamento = LocalDate.now().toString();
         return this.dataPagamento;
+    }
+
+
+    @Override
+    public void calcularValorTotalEParcelas() {
+        // Calcula o valor total com desconto
+        this.valorTotal = this.valorServico - this.desconto;
+
+        // Verifica se a quantidade de parcelas é válida
+        if (this.parcelas > 0) {
+            // Divide o valor total pelo número de parcelas
+            this.valorParcela = this.valorTotal / this.parcelas;
+        } else {
+            // Se não houver parcelas válidas, o valor da parcela é o valor total
+            this.valorParcela = this.valorTotal;
+        }
     }
 }
