@@ -2,7 +2,7 @@
 
 Bem-vindo ao repositório do nosso projeto de Java para 2024! Aqui você encontrará todas as informações e recursos relacionados ao nosso trabalho.
 
-### Professor: Tiago Mendes Ferrer
+## 👨‍🏫 Professor: Tiago Mendes Ferrer
 
 ## 👥 Integrantes
 
@@ -22,7 +22,7 @@ Acesse o repositório principal do projeto:
 
 Acesse o vídeo de explicação do projeto:
 
-**YouTube:** [https://youtu.be/qu_wvzf__70
+🔗 **YouTube:** [https://youtu.be/qu_wvzf__70](https://youtu.be/qu_wvzf__70)
 
 ---
 
