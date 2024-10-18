@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a96ba79-4ce2-4b85-96ec-61410e975e16" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="750092ef-213c-4e05-8804-1d9927718978" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +31,7 @@
   "customColor": "",
   "associatedIndex": 8
 }]]></component>
-  <component name="ProjectId" id="2nYoQwNSwXirpywWT8cihfcxi3h" />
+  <component name="ProjectId" id="2nYzRDLAiTZxQUPZT1NAGfbMGnJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -43,13 +40,17 @@
   "keyToString": {
     "Application.Teste.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-
+    "git-widget-placeholder": "Paulo",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/cp_2024/cp_java_2024/java_CP5/intelij_java/cp5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.fiap.main.Teste" />
@@ -81,11 +82,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9a96ba79-4ce2-4b85-96ec-61410e975e16" name="Changes" comment="" />
-      <created>1729159358219</created>
+      <changelist id="750092ef-213c-4e05-8804-1d9927718978" name="Changes" comment="" />
+      <created>1729164787892</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-
+      <updated>1729164787892</updated>
+      <workItem from="1729164788687" duration="303000" />
     </task>
     <servers />
   </component>
