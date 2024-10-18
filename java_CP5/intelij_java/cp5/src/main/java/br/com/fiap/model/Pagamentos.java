@@ -157,17 +157,13 @@ public class Pagamentos implements IPagamentos {
     }
 
 
-    @Override
+    // Método para calcular o valor das parcelas baseado no número de parcelas:
     public void calcularValorTotalEParcelas() {
-        // Calcula o valor total com desconto
         this.valorTotal = this.valorServico - this.desconto;
 
-        // Verifica se a quantidade de parcelas é válida
         if (this.parcelas > 0) {
-            // Divide o valor total pelo número de parcelas
-            this.valorParcela = this.valorTotal / this.parcelas;
+            this.valorParcela = this.valorTotal / this.parcelas;  // parcelas é int
         } else {
-            // Se não houver parcelas válidas, o valor da parcela é o valor total
             this.valorParcela = this.valorTotal;
         }
     }

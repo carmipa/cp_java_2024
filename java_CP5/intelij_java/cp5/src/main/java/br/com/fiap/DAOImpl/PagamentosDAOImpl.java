@@ -11,9 +11,27 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class PagamentosDAOImpl implements PagamentosDAO {
+
+    @Override
+    public void create(Pagamentos pagamentos, Connection connection) {
+
+        String sql = "INSERT INTO pagamentos (data_pagamento, tipo_pagamento, forma_pagamento, parcelas, valor_parcela, desconto, valor_total) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+
+            stmt.setString(1, pagamentos.getDataPagamento());
+            stmt.setString(2, pagamentos.getTipoPagamento());
+            stmt.setString(3, pagamentos.getFormaPagamento());
+            stmt.setInt(4, pagamentos.getParcelas());
+            stmt.setDouble(5, pagamentos.getValorParcela());
+            stmt.setDouble(6, pagamentos.getDesconto());
+            stmt.setDouble(7, pagamentos.getValorTotal());
+
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     // Códigos ANSI para formatação de texto e cores
     public static final String RESET = "\u001B[0m";
@@ -22,34 +40,6 @@ public class PagamentosDAOImpl implements PagamentosDAO {
     public static final String GREEN = "\u001B[32m";
     public static final String RED = "\u001B[31m";
     public static final String YELLOW = "\u001B[33m";
-
-    public void create(Pagamentos pagamentos, Connection connection) {
-        String sql = "INSERT INTO pagamentos (data_pagamento, tipo_pagamento, forma_pagamento, parcelas, valor_parcela, desconto, valor_total) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-        try (PreparedStatement stmt = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
-            stmt.setString(1, pagamentos.getDataPagamento());
-            stmt.setString(2, pagamentos.getTipoPagamento());
-            stmt.setString(3, pagamentos.getFormaPagamento());
-            stmt.setInt(4, pagamentos.getParcelas());  // Parâmetro correto
-            stmt.setDouble(5, pagamentos.getValorParcela());  // Parâmetro correto
-            stmt.setDouble(6, pagamentos.getDesconto());  // Corrigido o índice 6
-            stmt.setDouble(7, pagamentos.getValorTotal());  // Corrigido o índice 7
-
-            int affectedRows = stmt.executeUpdate();
-
-            if (affectedRows > 0) {
-                try (ResultSet generatedKeys = stmt.getGeneratedKeys()) {
-                    if (generatedKeys.next()) {
-                        pagamentos.setIdPagemnto(generatedKeys.getInt(1)); // Define o ID gerado
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
 
     @Override
     public Pagamentos readById(int id) {
@@ -141,7 +131,7 @@ public class PagamentosDAOImpl implements PagamentosDAO {
     @Override
     public void update(Pagamentos pagamentos) {
 
-        String sql = "UPDATE pagamentos SET data_pagamento = ?, tipo_pagamento = ?, forma_pagamento = ?, parcelas = ?, valor_parcela = ?, desconto = ?, valor_total = ? WHERE id_pagamento = ?";
+        String sql = "UPODATE pagamentos SET data_pagamento = ?, tipo_pagamento = ?, forma_pagamento = ?, parcelas = ?, valor_parcela = ?, desconto = ?, valor_total = ? WHERE id_pagamento = ?";
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 

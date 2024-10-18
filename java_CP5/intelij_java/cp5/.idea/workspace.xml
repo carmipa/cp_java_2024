@@ -7,8 +7,8 @@
     <list default="true" id="750092ef-213c-4e05-8804-1d9927718978" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/PagamentosDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/DAOImpl/PagamentosDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/InterfaceModel/IPagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/InterfaceModel/IPagamentos.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/UI/PagamentosInputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/dao/PagamentosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/dao/PagamentosDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/fiap/model/Pagamentos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1729164787892</updated>
       <workItem from="1729164788687" duration="303000" />
-      <workItem from="1729263745713" duration="3698000" />
+      <workItem from="1729263745713" duration="7372000" />
     </task>
     <servers />
   </component>
