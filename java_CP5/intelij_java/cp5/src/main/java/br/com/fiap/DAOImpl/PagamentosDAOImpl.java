@@ -33,11 +33,18 @@ public class PagamentosDAOImpl implements PagamentosDAO {
         }
     }
 
+    // Códigos ANSI para formatação de texto e cores
+    public static final String RESET = "\u001B[0m";
+    public static final String BOLD = "\u001B[1m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String RED = "\u001B[31m";
+    public static final String YELLOW = "\u001B[33m";
+
     @Override
     public Pagamentos readById(int id) {
-
         String sql = "SELECT * FROM pagamentos WHERE id_pagamento = ?";
-        Pagamentos pagamentos = null;
+        Pagamentos pagamento = null;
         try (Connection connection = ConnectionFactory.getConnection();
              PreparedStatement stmt = connection.prepareStatement(sql)) {
 
@@ -45,27 +52,39 @@ public class PagamentosDAOImpl implements PagamentosDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                pagamentos = new Pagamentos(
+                pagamento = new Pagamentos(
                         rs.getInt("id_pagamento"),
                         rs.getString("data_pagamento"),
                         rs.getString("tipo_pagamento"),
                         rs.getString("forma_pagamento"),
-                        rs.getInt("parcelas"),
-                        rs.getDouble("valor_parcela"),
+                        0.0, // valorServico não está no banco de dados, então passamos um valor padrão.
                         rs.getDouble("desconto"),
-                        rs.getDouble("valor_total")
+                        rs.getDouble("valor_total"),
+                        rs.getInt("parcelas"),
+                        rs.getDouble("valor_parcela")
                 );
+
+                // Exibe os dados alinhados
+                System.out.println(BLUE + BOLD + "╔═══════════════════════ DADOS DO PAGAMENTO ════════════════════════╗" + RESET);
+                System.out.printf("%-30s: %d\n", "ID", pagamento.getIdPagemnto());
+                System.out.printf("%-30s: %s\n", "Data de Pagamento", pagamento.getDataPagamento());
+                System.out.printf("%-30s: %s\n", "Tipo de Pagamento", pagamento.getTipoPagamento());
+                System.out.printf("%-30s: %s\n", "Forma de Pagamento", pagamento.getFormaPagamento());
+                System.out.printf("%-30s: %d\n", "Parcelas", pagamento.getParcelas());
+                System.out.printf("%-30s: R$ %.2f\n", "Valor da Parcela", pagamento.getValorParcela());
+                System.out.printf("%-30s: %.2f%%\n", "Desconto", pagamento.getDesconto());
+                System.out.printf("%-30s: R$ %.2f\n", "Valor Total", pagamento.getValorTotal());
+                System.out.println(BLUE + BOLD + "╚══════════════════════════════════════════════════════════════════╝" + RESET);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return pagamentos;
+        return pagamento;
     }
 
     @Override
     public List<Pagamentos> readAll() {
-
         String sql = "SELECT * FROM pagamentos";
         List<Pagamentos> pagamentosList = new ArrayList<>();
         try (Connection connection = ConnectionFactory.getConnection();
@@ -73,24 +92,41 @@ public class PagamentosDAOImpl implements PagamentosDAO {
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
-                Pagamentos pagamentos = new Pagamentos(
+                Pagamentos pagamento = new Pagamentos(
                         rs.getInt("id_pagamento"),
                         rs.getString("data_pagamento"),
                         rs.getString("tipo_pagamento"),
                         rs.getString("forma_pagamento"),
-                        rs.getInt("parcelas"),
-                        rs.getDouble("valor_parcela"),
+                        0.0, // valorServico não está no banco de dados, então passamos um valor padrão.
                         rs.getDouble("desconto"),
-                        rs.getDouble("valor_total")
+                        rs.getDouble("valor_total"),
+                        rs.getInt("parcelas"),
+                        rs.getDouble("valor_parcela")
                 );
-                pagamentosList.add(pagamentos);
+                pagamentosList.add(pagamento);
             }
+
+            // Exibe todos os pagamentos formatados
+            for (Pagamentos pagamento : pagamentosList) {
+                System.out.println(BLUE + BOLD + "╔═══════════════════════ DADOS DO PAGAMENTO ════════════════════════╗" + RESET);
+                System.out.printf("%-30s: %d\n", "ID", pagamento.getIdPagemnto());
+                System.out.printf("%-30s: %s\n", "Data de Pagamento", pagamento.getDataPagamento());
+                System.out.printf("%-30s: %s\n", "Tipo de Pagamento", pagamento.getTipoPagamento());
+                System.out.printf("%-30s: %s\n", "Forma de Pagamento", pagamento.getFormaPagamento());
+                System.out.printf("%-30s: %d\n", "Parcelas", pagamento.getParcelas());
+                System.out.printf("%-30s: R$ %.2f\n", "Valor da Parcela", pagamento.getValorParcela());
+                System.out.printf("%-30s: %.2f%%\n", "Desconto", pagamento.getDesconto());
+                System.out.printf("%-30s: R$ %.2f\n", "Valor Total", pagamento.getValorTotal());
+                System.out.println(BLUE + BOLD + "╚══════════════════════════════════════════════════════════════════╝" + RESET);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return pagamentosList;
     }
+
 
     @Override
     public void update(Pagamentos pagamentos) {
