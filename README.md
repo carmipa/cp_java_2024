@@ -20,6 +20,10 @@ Acesse o repositório principal do projeto:
 
 🔗 **GitHub:** [github.com/carmipa/cp_java_2024](https://github.com/carmipa/cp_java_2024)
 
+Acesse o vídeo de explicação do projeto:
+
+**YouTube:** [https://youtu.be/qu_wvzf__70
+
 ---
 
 Esperamos que este projeto seja útil e agradecemos qualquer feedback ou contribuição!
